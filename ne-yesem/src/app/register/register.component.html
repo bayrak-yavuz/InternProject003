@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+    <div class="container">
+      <div class="col1">
+        <img src="assets/images/icon.png" style="width: 60px; height: 50px;">
+      </div>
+      <div class="col2"> NE YESEM
+        <div class="col3"> Her şey mutfağa girmekle başlar.....</div>
+      </div>
+      <div >
+        <a  type="button" routerlink="/tabs/tab1" href="/tabs/tab1"><ion-icon name="home" class="home"></ion-icon></a></div>
+    </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <hr>
+  <div class="grid">
+  <div>
+ 
+   <button (click)="goBack()" class="back"><i class="fas fa-chevron-left"></i></button>  
+   </div>
+    <div><h4>Giriş</h4></div>
+    <form [formGroup]="validationFormUser" (ngSubmit)="LoginUser(validationFormUser.value)">
+    <div class="center">
+       
+     <h5>E-mail:</h5>
+      <input formControlName="email" >
+      <div>
+        <ng-container *ngFor="let validation of validationUserMessage.email">
+          <div class="error_message" *ngIf="validationFormUser.get('email').hasError(validation.type) && (validationFormUser.get('email').dirty || validationFormUser.get('email').touched)">
+            {{validation.message}}
+          </div>
+        </ng-container>
+      </div>
+      <h5>Şifre:</h5>
+      <input type="password" formControlName="password">
+      <div>
+        <ng-container *ngFor="let validation of validationUserMessage.password">
+          <div class="error_message" *ngIf="validationFormUser.get('password').hasError(validation.type) && (validationFormUser.get('password').dirty || validationFormUser.get('password').touched)">
+            {{validation.message}}
+          </div>
+        </ng-container>
+      </div>
+      <div class="btn">
+        <a  type="button" routerlink="/tabs/tab3" href="/tabs/tab3"><button id="btn-login" [disable]="!validationFormUser.valid">Giriş Yap</button></a>
+        <a  type="button" routerlink="/tabs/tab2" href="/tabs/tab2"><button id="btn-forgot">Şifremi unuttum!</button> </a> 
+      </div>
+    </div>
+    </form>
+  </div>
+
+  </ion-content>

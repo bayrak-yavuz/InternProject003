@@ -6,6 +6,7 @@ const routes: Routes = [
   {
     path: 'tabs',
     component: TabsPage,
+  
     children: [
       {
         path: 'tab1',
@@ -18,6 +19,18 @@ const routes: Routes = [
       {
         path: 'tab3',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+      },
+      {
+        path: 'login',
+        loadChildren: () => import('../login/login.module').then(m => m.LoginPageModule)
+      },
+      {
+        path: 'register',
+        loadChildren: () => import('../register/register.module').then(m => m.RegisterPageModule)
+      },
+      {
+        path: 'forgot',
+        loadChildren: () => import('../forgot/forgot.module').then(m => m.RegisterPageModule)
       },
       {
         path: '',

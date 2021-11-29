@@ -1,0 +1,109 @@
+ 
+@import url(//fonts.googleapis.com/css?family=Lato:100,300,300i,400);
+.grid
+{
+ display: grid;
+ grid-template-rows: 60px 100px 250px;
+ margin-top: 15px;
+}
+.center{
+    text-align: center;
+}
+.container
+{
+ display: grid;
+ grid-template-columns: 90px 220px 50px;
+ margin-top: 15px;
+}
+.header
+{
+  display: grid;
+  margin-top: 15px;
+  justify-items: center;
+}
+.col2
+{
+  display: grid;
+  grid-template-rows: 20px 40px;
+  color: #C9313D;
+  font-weight: bold;
+  text-align: left; 
+}
+.col3
+{
+  color:black;
+  font-size: 10px;
+  margin-left: 40px;
+}
+hr{
+  opacity: 1;
+  background:  #FEE169;
+  height: 6px;
+  border-radius: 9999px;
+  width: 100%;
+  display:inline-block;
+  margin: 0;
+  margin-bottom :.75rem;
+}
+.home{
+width: 30px;
+height: 40px;
+padding-left: 15px;
+color: black;//mavi renk
+text-decoration: inherit;
+}
+.back{
+    background-color: #cdd452;
+    margin-left: 10px;
+    border-radius: 10px;
+    width: 25px;
+    height: 30px;
+    opacity: 0.7;
+}
+i{
+    border: black;
+}
+
+  
+  h4 {
+    margin-top: 1em;
+    color: black;
+    font-size: 150%;
+    font-weight: 300;
+    margin-left: 20px;
+  }
+  
+  #btn-login {
+     width: 120px;
+    height: 30px;
+    background-color: #C9313D;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  
+  #btn-forgot {
+    display: block;
+    width: 100%;
+    margin-top: 1.0em;
+    border-radius: 2px;
+    color: black;
+    background-color: white;
+  
+   }
+   a{
+    text-decoration: inherit;
+    color: inherit;//mavi renk
+   }
+  input
+  {
+ border-radius: 10px;
+ border-width: 1px;
+ height: 25px;
+  }
+  .error_message{
+    color:#f9722e
+  }
+ 
