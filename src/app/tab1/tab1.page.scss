@@ -1,29 +1,34 @@
- 
+
+
+
 .container
 {
+ 
  display: grid;
  grid-template-columns: 90px 220px 50px;
  margin-top: 15px;
 }
-.header
+// .header
+// {
+//   display: grid;
+//   margin-top: 15px;
+//   justify-items: center;
+// }
+
+.title
 {
-  display: grid;
-  margin-top: 15px;
-  justify-items: center;
-}
-.col2
-{
-  display: grid;
-  grid-template-rows: 20px 40px;
+ // grid-template-rows: 20px 40px;
   color: #C9313D;
   font-weight: bold;
-  text-align: left; 
+  font-size: large;
+  //font-family:;
+ //  text-align: left;
 }
-.col3
+.text
 {
   color:black;
   font-size: 10px;
-  margin-left: 40px;
+  margin-left: 2rem;
 }
 hr{
   opacity: 1;
