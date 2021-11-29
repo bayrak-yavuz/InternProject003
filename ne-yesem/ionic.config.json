@@ -1,0 +1,7 @@
+{
+  "name": "ne-yesem",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
