@@ -3,11 +3,11 @@ export const environment = {
 };
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyC4hzhgoV9VXDeXhR8ZOx_7RbSBmi8c-lQ",
-  authDomain: "ne-yesem-99b4b.firebaseapp.com",
-  projectId: "ne-yesem-99b4b",
-  storageBucket: "ne-yesem-99b4b.appspot.com",
-  messagingSenderId: "1069247487943",
-  appId: "1:1069247487943:web:d246627a94230a3b48c3e2",
-  measurementId: "G-QREGL6990T"
+  apiKey: "AIzaSyC41HzZlNIfmp8JR2ed85pCQbZseKpMav8",
+  authDomain: "ionicneyesem.firebaseapp.com",
+  projectId: "ionicneyesem",
+  storageBucket: "ionicneyesem.appspot.com",
+  messagingSenderId: "1026798085847",
+  appId: "1:1026798085847:web:ab032507ace5c4cbbd7292",
+  measurementId: "G-4ZK6ZFD19D"
 };

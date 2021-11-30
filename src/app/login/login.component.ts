@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { FormGroup, FormBuilder, Validators, FormControl, FormControlName} from '@angular/forms';
 import {LoginService} from 'src/app/services/login.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
     ]
   }
  validationFormUser:FormGroup;
-  constructor(private location: Location, public formbuilder:FormBuilder,public loginservice: LoginService) { //router ile yap
+  constructor(private router: Router,private location: Location, public formbuilder:FormBuilder,public loginservice: LoginService) { //router ile yap
     
   }
   goBack(): void {
@@ -42,6 +43,8 @@ export class LoginComponent implements OnInit {
    LoginUser(value){
     this.loginservice.loginFirelogin(value).then(res=> {
       console.log('Giriş Başarılı')
+      this.router.navigateByUrl('/tabs/tab3', { replaceUrl:true });
+
     },err=>{
       console.log('Giriş Başarısız')
     }); 
