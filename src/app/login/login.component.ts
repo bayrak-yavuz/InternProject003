@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { FormGroup, FormBuilder, Validators, FormControl, FormControlName} from '@angular/forms';
 import {LoginService} from 'src/app/services/login.service'
 import { Router } from '@angular/router';
-
+import { GlobalService } from '../services/global.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     ]
   }
  validationFormUser:FormGroup;
-  constructor(private router: Router,private location: Location, public formbuilder:FormBuilder,public loginservice: LoginService) { //router ile yap
+  constructor(private router: Router,private location: Location, public formbuilder:FormBuilder,public loginservice: LoginService, public global:GlobalService) { //router ile yap
     
   }
   goBack(): void {
