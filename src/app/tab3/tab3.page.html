@@ -1,29 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div class="header">
-    <div class="container">
-      <div class="col1">
-        <img src="assets/images/icon.png" style="width: 60px; height: 50px;">
+      <div class="container">
+        <div class="col1">
+          <img src="assets/images/icon.png" style="width: 60px; height: 50px;">
+        </div>
+        <div class="col2"> NE YESEM
+          <div class="col3"> Her şey mutfağa girmekle başlar.....</div>
+        </div>
       </div>
-      <div class="col2"> NE YESEM
-        <div class="col3"> Her şey mutfağa girmekle başlar.....</div>
-      </div>
-    </div>
     </div>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
   <hr>
   <div class="profile">
-    <div class="pp">
-  <img src="assets/images/pp.PNG" style="height: 100px; width: 100px;"></div>
-  <div class="name"><b>Durdane Ayşe TAŞCI</b></div>
-  </div>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <div class="bilgi"> Photo</div>
+    <div class="photo">
+      <!-- {{user?.userName}} -->
+    </div>
+    <div class="bilgi2">
+      <div> <i class="fas fa-phone-alt"></i> <b> </b></div>
+
+      <div> <i class="fas fa-envelope"></i><b> </b></div>
+
+      <div> <i class="fas fa-street-view"></i> <b> NETGER</b> </div>
+<p>{{user?.createdAt | date}}</p>
+    </div>
+  </div>
+  <ion-button class="logout" expand="block" shape="round" (click)="logout()">Çıkış Yap</ion-button>
 </ion-content>

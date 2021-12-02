@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   name:string;
   email:string;
   phone:string;
-  password:string;
+  password:any;
 
   constructor(
     private afs:AngularFirestore,
@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
        .then(()=> {
          loading.dismiss();
          this.toast('Kayıt başarılı lütfen e-postanızı kontrol edin!','success');
-         this.router.navigate(['/tabs/tab3']);
+         this.router.navigate(['tabs/tab3']);
        })
        .catch(error =>{
         loading.dismiss();
@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
      })
    }
    else{
-    this.toast('Bilgileri tam giriniz!!','success');
+    this.toast('Bilgileri tam','success');
 
    }
  }//end register

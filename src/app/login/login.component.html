@@ -1,54 +1,51 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <div class="header">
-    <div class="container">
-      <div class="col1">
-        <img src="assets/images/icon.png" style="width: 60px; height: 50px;">
+      <div class="container">
+        <div class="col1">
+          <img src="assets/images/icon.png" style="width: 60px; height: 50px;">
+        </div>
+        <div class="col2"> NE YESEM
+          <div class="col3"> Her şey mutfağa girmekle başlar.....</div>
+        </div>
+        <div>
+          <a type="button" routerlink="/tabs/tab1" href="/tabs/tab1">
+            <ion-icon name="home" class="home"></ion-icon>
+          </a>
+        </div>
       </div>
-      <div class="col2"> NE YESEM
-        <div class="col3"> Her şey mutfağa girmekle başlar.....</div>
-      </div>
-      <div >
-        <a  type="button" routerlink="/tabs/tab1" href="/tabs/tab1"><ion-icon name="home" class="home"></ion-icon></a></div>
-    </div>
     </div>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
   <hr>
   <div class="grid">
-  <div>
- 
-   <button (click)="goBack()" class="back"><i class="fas fa-chevron-left"></i></button>  
-   </div>
-    <div><h4>Giriş</h4></div>
-    <form [formGroup]="validationFormUser" (ngSubmit)="LoginUser(validationFormUser.value)">
-    <div class="center">
-       
-     <h5>E-mail:</h5>
-      <input formControlName="email" >
-      <div>
-        <ng-container *ngFor="let validation of validationUserMessage.email">
-          <div class="error_message" *ngIf="validationFormUser.get('email').hasError(validation.type) && (validationFormUser.get('email').dirty || validationFormUser.get('email').touched)">
-            {{validation.message}}
-          </div>
-        </ng-container>
-      </div>
-      <h5>Şifre:</h5>
-      <input type="password" formControlName="password">
-      <div>
-        <ng-container *ngFor="let validation of validationUserMessage.password">
-          <div class="error_message" *ngIf="validationFormUser.get('password').hasError(validation.type) && (validationFormUser.get('password').dirty || validationFormUser.get('password').touched)">
-            {{validation.message}}
-          </div>
-        </ng-container>
-      </div>
-      <div class="btn">
-        <a  type="button" (click)="LoginUser()" ><button id="btn-login" >Giriş Yap</button></a>
-        <a  type="button" ><button id="btn-forgot" >Şifremi unuttum!</button> </a> 
-      </div>
+    <div>
+
+      <button (click)="goBack()" class="back"><i class="fas fa-chevron-left"></i></button>
     </div>
-    </form>
+    <div>
+      <h4>Giriş</h4>
+    </div>
+    <ion-card>
+      <form>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input required type="email" [(ngModel)]="email" name="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Şifre</ion-label>
+            <ion-input required type="password" [(ngModel)]="password" name="password"></ion-input>
+          </ion-item>
+          <ion-button   class="btnn" expand="block" shape="round" (click)="logIn()">Giriş Yap  </ion-button>
+          <div style="text-align: center;">
+            <p><a [routerLink]="['/tabs/forgot']">Şifremi Unuttum!</a></p>
+          </div>        </ion-list>
+      </form>
+    </ion-card>
+    
   </div>
 
-  </ion-content>
+</ion-content>
