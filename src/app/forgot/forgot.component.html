@@ -1,3 +1,49 @@
-<p>
-  forgot works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <div class="header">
+      <div class="container">
+        <div class="col1">
+          <img src="assets/images/icon.png" style="width: 60px; height: 50px;">
+        </div>
+        <div class="col2"> NE YESEM
+          <div class="col3"> Her şey mutfağa girmekle başlar.....</div>
+        </div>
+        <div>
+          <a type="button" routerlink="/tabs/tab1" href="/tabs/tab1">
+            <ion-icon name="home" class="home"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <hr>
+  <div class="grid">
+    <div>
+
+      <button (click)="goBack()" class="back"><i class="fas fa-chevron-left"></i></button>
+    </div>
+    <div>
+      <h4>Şifremi Unuttum</h4>
+    </div>
+    <ion-card>
+      <form>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Yeni Şifre</ion-label>
+            <ion-input required type="email" [(ngModel)]="email" name="email"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Şifre Tekrarı</ion-label>
+            <ion-input required type="password" [(ngModel)]="password" name="password"></ion-input>
+          </ion-item>
+          <ion-button   class="btnn" expand="block" shape="round" (click)="logIn()"> Kaydet </ion-button>
+          </ion-list>
+      </form>
+    </ion-card>
+    
+  </div>
+
+</ion-content>

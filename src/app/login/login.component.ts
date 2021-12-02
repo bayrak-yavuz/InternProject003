@@ -3,13 +3,27 @@ import { Location } from '@angular/common';
 import { FormGroup, FormBuilder, Validators, FormControl, FormControlName} from '@angular/forms';
 import {LoginService} from 'src/app/services/login.service'
 import { Router } from '@angular/router';
+<<<<<<< HEAD
+import { GlobalService } from '../services/global.service';
+import { ToastController } from '@ionic/angular';
+=======
 
+>>>>>>> c1c16f6da6a9658d1a3798b3cd3a1f2cd5418749
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+<<<<<<< HEAD
+    email:string;
+    password:string;
+   constructor(private location: Location,
+              private login:LoginService,
+              private toastr:ToastController,
+              private router:Router,
+    ) {}
+=======
   validationUserMessage={
     email:[
       {type:"required", message:"Email giriniz!"},
@@ -24,29 +38,45 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,private location: Location, public formbuilder:FormBuilder,public loginservice: LoginService) { //router ile yap
     
   }
+>>>>>>> c1c16f6da6a9658d1a3798b3cd3a1f2cd5418749
   goBack(): void {
     this.location.back();
 
   }
   ngOnInit(): void {
-    this.validationFormUser=this.formbuilder.group({
-      email: new FormControl('',Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
-      password: new FormControl('',Validators.compose([
-        Validators.required,
-        Validators.minLength(5)
-      ]))
-    })
+   
   }
-   LoginUser(value){
-    this.loginservice.loginFirelogin(value).then(res=> {
-      console.log('Giriş Başarılı')
-      this.router.navigateByUrl('/tabs/tab3', { replaceUrl:true });
+  logIn()
+   {
+     if(this.email,this.password)
+     {
+          this.login.signIn(this.email,this.password);
+     }
+     else{
+       this.toast('Kayıtlı e-mail şifre giriniz','warning')
 
-    },err=>{
-      console.log('Giriş Başarısız')
-    }); 
-   }
+     }
+ 
+  
+  }
+  async toast(message,status)
+  {
+    const toast=await this.toastr.create({
+      message:message,
+      color:status,
+      position:'top',
+      duration:2000,
+    }) ;
+    toast.present();
+  }//end tast
 }
+
+
+
+
+
+
+
+
+
+ 
