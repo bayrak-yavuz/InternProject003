@@ -21,7 +21,7 @@ import { LoginService } from './services/login.service';
 
 //Login Guard
 import { LoginGuard } from './guards/login.guard';
-import { GlobalService } from './services/global.service';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -36,7 +36,6 @@ import { GlobalService } from './services/global.service';
   ],
   providers: [    LoginService,
     LoginGuard,
-    GlobalService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

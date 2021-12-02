@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
      });
 
      loading.present();
-    
+
      this.afaut.createUserWithEmailAndPassword(this.email, this.password)
      .then((data)=>{
        this.afs.collection('user').doc(data.user.uid).set({
@@ -55,8 +55,13 @@ export class RegisterComponent implements OnInit {
        })
        .then(()=> {
          loading.dismiss();
+<<<<<<< HEAD
          this.toast('Kayıt başarılı lütfen e-postanızı kontrol edin!','success');
          this.router.navigate(['tabs/tab3']);
+=======
+         this.toast('Kayıt başarılı lütfen e-postanızı kontrl edin!','success');
+         this.router.navigate(['/login']);
+>>>>>>> c1c16f6da6a9658d1a3798b3cd3a1f2cd5418749
        })
        .catch(error =>{
         loading.dismiss();
@@ -64,10 +69,13 @@ export class RegisterComponent implements OnInit {
        })
      })
    }
+<<<<<<< HEAD
    else{
     this.toast('Bilgileri tam','success');
 
    }
+=======
+>>>>>>> c1c16f6da6a9658d1a3798b3cd3a1f2cd5418749
  }//end register
 
 async toast(message,status)
