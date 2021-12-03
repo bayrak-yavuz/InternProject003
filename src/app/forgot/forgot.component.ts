@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-forgot',
   templateUrl: './forgot.component.html',
@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location:Location) { }
 
   ngOnInit() {}
+  goBack(): void {
+    this.location.back();
 
+  }
 }

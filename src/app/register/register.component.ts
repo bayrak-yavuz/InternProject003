@@ -51,14 +51,11 @@ export class RegisterComponent implements OnInit {
             'userEmail': this.email,
             'userPhone': this.phone,
             'createdAt': Date.now()
-          })
-            .then(() => {
+          }).then(() => {
               loading.dismiss();
-
               this.toast('Kayıt başarılı lütfen e-postanızı kontrol edin!', 'success');
-              this.router.navigate(['tabs/login']);
-            })
-            .catch(error => {
+              this.router.navigate(['tabs/tab3']);
+            }) .catch(error => {
               loading.dismiss();
               this.toast(error.message, 'darger');
             })
