@@ -8,41 +8,19 @@ import { RecipesService } from '../services/recipes.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  beko=GlobalVariables.log;
 
-//   eat: [{
-//     src: "/assets/images/1.jpg",
-//     text: "Hamburger",
+
   
-//   },
-//   {
-//     src: "/assets/images/2.jpg",
-//     text: "Hamburger",
-  
-//   },
-//   {
-//     src: "/assets/images/3.jpg",
-//     text: "Hamburger",
-  
-//   },
-//   {
-//     src: "/assets/images/4.jpg",
-//     text: "Hamburger",
-  
-//   },
-//   {
-//     src: "/assets/images/5.jpg",
-//     text: "Hamburger",
-  
-//   }
-// ]
+  beko:Boolean;
   data: any;
   constructor(private recipeService:RecipesService) {}
   
   
   ionViewWillEnter(){
     console.log('çalışıyor')
-
+    this.beko=GlobalVariables.log;
+    console.log(this.beko);
+    console.log
     this.getRecipes0()
   }
 
@@ -53,7 +31,7 @@ export class Tab1Page {
        console.log(this.data); });
     
   }
-
+    
 }
 
 

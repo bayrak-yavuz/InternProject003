@@ -89,6 +89,7 @@ export class LoginService {
   .then(() =>{
     loading.dismiss();
     this.router.navigate(['/tabs/login'])
+    
   }
   )
   } // end signout

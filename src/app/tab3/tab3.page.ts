@@ -1,3 +1,4 @@
+import { GlobalVariables } from './../global-var/global-variables';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
@@ -19,6 +20,8 @@ user:any;
 
 logout()
 {
+  GlobalVariables.log=true
+  console.log(GlobalVariables.log)
   this.login.signOut();
   
 }
