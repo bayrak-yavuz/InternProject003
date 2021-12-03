@@ -43,17 +43,21 @@
           </ion-item> 
           <ion-item>
             <ion-label position="stacked">Şifre</ion-label>
-            <ion-input required type="text" [(ngModel)]="password" name="password"></ion-input>
+            <ion-input required type="password" [(ngModel)]="password" name="password" ></ion-input>
           </ion-item> 
+          <ion-item>
+            <ion-label position="stacked">Şifre Tekrarı</ion-label>
+            <ion-input required type="password" [(ngModel)]="confirmpassword"  name="confirmpassword" (ionChange)="checkPassword()"></ion-input>
 
+          </ion-item> 
         </ion-list>
       </form>
     </ion-card>
+    <!-- <ion-button [disabled]="!passwordMatch"   class="btnn" expand="block" shape="round" (click)="register()">KAydet  </ion-button> -->
 
   </div>
   <div class="btnn">
-    <a type="button"><button id="btn-submit"
-        (click)="register()">Kaydet</button></a>
+    <a type="button"><button id="btn-submit"  (click)="register()">Kaydet</button></a>
   </div>
  
 </ion-content>

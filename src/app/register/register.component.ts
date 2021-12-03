@@ -15,8 +15,8 @@ export class RegisterComponent implements OnInit {
   name: string;
   email: string;
   phone: string;
-  password: any;
-
+  password: string;
+ confirmpassword:string;
   constructor(
     private afs: AngularFirestore,
     private afaut: AngularFireAuth,
@@ -68,6 +68,17 @@ export class RegisterComponent implements OnInit {
     }
   }//end register
 
+  checkPassword(){
+
+  if(this.password== this.confirmpassword){
+   
+    this.toast('Şifreler Eşleşti', 'success');
+  }
+  else{
+    this.toast('Şifreler Eşleşmiyor', 'success');
+
+  }
+}
   async toast(message, status) {
     const toast = await this.toastr.create({
       message: message,

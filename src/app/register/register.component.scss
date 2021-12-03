@@ -2,7 +2,7 @@
 .grid
 {
  display: grid;
- grid-template-rows: 60px 100px 285px;
+ grid-template-rows: 60px 100px 350px;
  margin-top: 15px;
 }
 
@@ -66,10 +66,7 @@ text-decoration: inherit;
     font-weight: 300;
     margin-left: 20px;
   }
-   
-  .btnn{
-    text-align: center
-  }
+    
 #btn-submit {
     width: 120px;
    height: 30px;
@@ -80,7 +77,17 @@ text-decoration: inherit;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
    }
 
-   
+   .btnn{
+    width: 110px;
+    height: 30px;
+    --background: #C9313D;
+    border-radius: 10px;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 35%;
+
+    }
+ 
  
  
   
