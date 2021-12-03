@@ -26,8 +26,8 @@ export class LoginService {
         switchMap(user => {
           
           if (user) {
-            return this.afs.doc<User>(`yeni/${user.uid}`).valueChanges();
-          }
+            return this.afs.doc(`user/${user.uid}`).valueChanges();
+           }
           else {
             return of(null);
           }
@@ -50,7 +50,7 @@ export class LoginService {
     .then((res) => {
       if (!res.user.email) {
         loading.dismiss();
-        this.toast('Lütfen mail adresini giriniz!!', 'warning');
+        this.toast('Lütfen mail adresini giriniz!!', 'danger');
         this.auth.signOut();
       }
       else {

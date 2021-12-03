@@ -13,20 +13,22 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <hr>
+<hr>
+
   <div class="profile">
 
-    <div class="bilgi"> Photo</div>
+    <div class="bilgi">  <img src="assets/images/pp.PNG" style="width: 150px; height: 140px; text-align: center;"></div>
     <div class="photo">
-      <!-- {{user?.userName}} -->
-    </div>
-    <div class="bilgi2">
-      <div> <i class="fas fa-phone-alt"></i> <b> </b></div>
+  
 
-      <div> <i class="fas fa-envelope"></i><b> </b></div>
-
-      <div> <i class="fas fa-street-view"></i> <b> NETGER</b> </div>
-<p>{{user?.createdAt | date}}</p>
+    <div class="bilgi2">  <H2>Hoşgeldin  {{user?.userName}}</H2>
+      
+      <div >  <hr class="hr2"></div>
+      <div> <i class="fas fa-phone-alt"></i>  {{user?.userPhone}} </div>
+      <div> <i class="fas fa-envelope"></i>  {{user?.userEmail}} </div>
+      <div> <i class="fas fa-globe"></i> {{user?.createdAt | date}} </div>
+      <div> <i class="fas fa-street-view"></i>NETGER</div>
+<p></p>  </div>
     </div>
   </div>
   <ion-button class="logout" expand="block" shape="round" (click)="logout()">Çıkış Yap</ion-button>
