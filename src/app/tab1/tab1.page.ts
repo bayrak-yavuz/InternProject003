@@ -1,3 +1,4 @@
+import { GlobalVariables } from './../global-var/global-variables';
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
 
@@ -7,8 +8,7 @@ import { RecipesService } from '../services/recipes.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  
-
+  beko=GlobalVariables.log;
 
 //   eat: [{
 //     src: "/assets/images/1.jpg",
@@ -38,7 +38,7 @@ export class Tab1Page {
 // ]
   data: any;
   constructor(private recipeService:RecipesService) {}
-
+  
   
   ionViewWillEnter(){
     console.log('çalışıyor')

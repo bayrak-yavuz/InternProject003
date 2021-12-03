@@ -1,3 +1,4 @@
+import { GlobalVariables } from './../global-var/global-variables';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
@@ -56,6 +57,10 @@ export class LoginService {
       else {
         loading.dismiss();
         this.router.navigate(['/tabs/tab3'])
+
+
+       GlobalVariables.log=false;
+       console.log(GlobalVariables.log)
       }
     })
       .catch(error => {
