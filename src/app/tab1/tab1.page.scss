@@ -1,12 +1,13 @@
 .title{
   color: #C9313D;
   font-weight: bold;
+  font-size: 1.8rem;
 }
 .text{
   color: #080808;
   font-weight: lighter;
-  font-size:0.78rem;
-  padding-left: 1.8rem;
+  font-size:1.4rem;
+  padding-left: 2.8rem;
 }
 .logo{
   
@@ -16,16 +17,61 @@
   width: 60px;
   height: 50px;
 }
-.foodImg{
+.bottomBox{
 
 }
-
-.container
-{
- display: grid;
- grid-template-columns: 90px 220px 50px;
- margin-top: 15px;
+.box-img{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: auto;
+  height:120px;
+ // display:inline-block;
+  
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
+.kutu{
+  margin:20px;
+  box-shadow:2px 2px rgb(143, 139, 139);
+  border-radius: 10px;
+}
+
+@media screen and (max-width:1025px) {
+  .text{
+    font-size: 1.0rem;
+    padding-left: 1.6rem;
+  }
+  .title{
+    font-size:1.1rem;
+  }
+  
+}
+@media screen and (max-width:769px) {
+  .text{
+    font-size: .7rem;
+    padding-left: .9rem;
+  }
+  .title{
+    font-size:.9rem;
+  }
+}
+@media screen and (max-width:426px) {
+  .text{
+    font-size: .30rem;
+    padding-left: .6rem;
+  }
+  .title{
+    font-size:.5rem;
+  }
+}
+
+
+// .container
+// {
+//  display: grid;
+//  grid-template-columns: 90px 220px 50px;
+//  margin-top: 15px;
+// }
 .header
 {
   display: grid;
@@ -103,14 +149,7 @@ i
   margin-left: 10px;
      
 }
-.box1{
-  margin:5px;
- box-shadow:2px 2px rgb(143, 139, 139);
-  border-radius: 10px;
-  height: 100%;
-  background-size: 100% 65%;
-  background-repeat: no-repeat;
-}
+
 .box2{
   margin:5px;
  border-radius: 10px;
