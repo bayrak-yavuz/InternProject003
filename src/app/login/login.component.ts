@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators, FormControl, FormControlName} from 
 import {LoginService} from 'src/app/services/login.service'
 import { Router } from '@angular/router';
  import { ToastController } from '@ionic/angular';
+import { EmptyError } from 'rxjs';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
     email:string;
     password:string;
+    passwordToggleIcon:'eye';
    constructor(private location: Location,
               private login:LoginService,
               private toastr:ToastController,
