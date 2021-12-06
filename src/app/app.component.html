@@ -1,51 +1,25 @@
 <ion-app  class="menu">
-  <div  class="menu">
-  <ion-menu menuId="main-menu" content-id="main">
+   <ion-menu menuId="main-menu" side="end" content-id="main">
     <ion-header>
       <ion-toolbar>
         <ion-title>Menü</ion-title>
         </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-list>
-        <ion-item>
-          <ion-icon name="egg" slot="start"></ion-icon>
-          <ion-label>Kategoriler</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-icon name="egg" slot="start"></ion-icon>
-            <ion-label>Profilim</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-icon name="egg" slot="start"></ion-icon>
-              <ion-label>Kaydedilenler</ion-label>
-              </ion-item>
-              <div class="logo">
-              <ion-item>
-                 <ion-label class="text"><b>Bizi Takip Edin</b></ion-label>
-                </ion-item>
-                <div class="hov">
-                <ion-item>
-                  <ion-icon  name="logo-youtube" slot="start" style="width: 15px; height: 15px;"></ion-icon>
-                  <ion-label class="text">YouTube</ion-label>
-                  </ion-item>
-                  </div>
-                <ion-item>
-                  <ion-icon name="logo-facebook" slot="start" style="width: 15px; height: 15px;"></ion-icon>
-                  <ion-label class="text">Facebook</ion-label>
-                  </ion-item>
-                  <ion-item>
-                    <ion-icon name="logo-instagram" slot="start" style="width: 15px; height: 15px;"></ion-icon>
-                    <ion-label class="text">Instagram</ion-label>
-                    </ion-item>
-                    <ion-item>
-                      <ion-icon name="logo-twitter" slot="start" style="width: 15px; height: 15px;"></ion-icon>
-                      <ion-label class="text">Twitter</ion-label>
-                      </ion-item>
-              </div>
-          </ion-list>
-          </ion-content>
-          </ion-menu>
-  </div>
-   <ion-router-outlet id="main"></ion-router-outlet>
+      <hr>
+       <ul>
+         <li><i class="fas fa-th"></i>Kategoriler</li>
+         <li><i class="fas fa-bookmark"></i>Kaydedilenler</li>
+         <li><i class="fas fa-user-circle"></i>Profilim</li>
+       </ul>
+       <ul class="alt">
+        <h5>Bizi Takip edin</h5>
+        <hr>
+        <li class="text"><i class="fab fa-youtube"></i>Youtube</li>
+        <li class="text"><i class="fab fa-instagram"></i>İnstagram</li>
+        <li class="text"><i class="fab fa-facebook"></i>Facebook</li>
+      </ul>
+       </ion-content>
+       </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

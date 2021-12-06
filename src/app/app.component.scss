@@ -1,10 +1,41 @@
-.logo{
-margin-top: 200px;
+ 
+ ul{
+     list-style: none;
+     margin-top: 30px;
+     width: 100%;
+  }
+ li{
+     margin-top: 10px;
+     height: 50px;
+     width: 100%;
+     font-size: 18px;
 
+ }
+ li:hover{
+background-color: #cdd452;
+ }
+ i{
+     margin-right: 10px;
+     margin-left: 5px;
+     color:#C9313D;
+ }
+ .alt{
+     margin-top:250px;
+ }
+ .text{
+    font-size: 15px;
+    margin-top: 5px;
+    height: 30px;
+
+ }
+ hr
+{
+opacity: 1;
+background:  #FEE169;
+height: 6px;
+border-radius: 9999px;
+width: 100%;
+display:inline-block;
+margin: 0;
+margin-bottom :.75rem;
 }
-.text{
-    font-size: 13px;
- }
- .hov:hover{
-     color: rgb(211, 29, 29);
- }
