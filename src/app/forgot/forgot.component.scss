@@ -2,7 +2,7 @@
 .grid
 {
  display: grid;
- grid-template-rows: 60px 100px 200px;
+ grid-template-rows: 60px 100px 150px;
  margin-top: 15px;
 }
 
@@ -72,7 +72,7 @@ text-decoration: inherit;
     height: 30px;
     --background: #C9313D;
     border-radius: 10px;
-    margin-top: 5px;
+    margin-top: 15px;
     text-align: center;
     margin-left: 35%;
 
