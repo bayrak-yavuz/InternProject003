@@ -1,3 +1,4 @@
+import { GlobalVariables } from './../global-var/global-variables';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -55,6 +56,7 @@ export class RegisterComponent implements OnInit {
               loading.dismiss();
               this.toast('Kayıt başarılı lütfen e-postanızı kontrol edin!', 'success');
               this.router.navigate(['tabs/tab3']);
+              GlobalVariables.log=false
             }) .catch(error => {
               loading.dismiss();
               this.toast(error.message, 'darger');
