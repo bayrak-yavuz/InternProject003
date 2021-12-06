@@ -26,7 +26,7 @@ background-color: #cdd452;
     font-size: 15px;
     margin-top: 5px;
     height: 30px;
-
+    
  }
  hr
 {
@@ -38,4 +38,8 @@ width: 100%;
 display:inline-block;
 margin: 0;
 margin-bottom :.75rem;
+}
+a{
+    text-decoration: inherit;
+    color: inherit;//mavi renk
 }

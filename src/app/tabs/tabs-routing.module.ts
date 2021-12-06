@@ -36,6 +36,11 @@ const routes: Routes = [
         loadChildren: () => import('../forgot/forgot.module').then(m => m.RegisterPageModule)
       },
       {
+        path: 'saved',
+        loadChildren: () => import('../saved/saved.module').then(m => m.SavedPageModule),
+        canActivate:[LoginGuard],
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
