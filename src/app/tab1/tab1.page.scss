@@ -177,7 +177,7 @@ box-shadow:2px 2px rgb(143, 139, 139);
 border-radius: 10px;
 box-shadow:2px 2px rgb(143, 139, 139);
 }
-  .boxx
+.boxx
   {
     display: grid;
     grid-template-rows:  180px 100px 300px;
@@ -188,7 +188,7 @@ box-shadow:2px 2px rgb(143, 139, 139);
   
   
   
-   .footer{
+.footer{
     display: grid;
     position:absolute;
     bottom:0;
@@ -199,15 +199,16 @@ box-shadow:2px 2px rgb(143, 139, 139);
      border-radius: 10px;
      background-color: rgb(247, 244, 244);
      justify-items: center;
-    }
-   .boxes2{
+}
+
+.boxes2{
     display: grid;
     grid-template-columns:100px 100px 100px;
     margin-top: 50px;
     margin-left: 10px;
      
 
-   }
+}
 
 
 
