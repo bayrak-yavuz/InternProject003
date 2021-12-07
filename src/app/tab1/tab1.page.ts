@@ -14,7 +14,18 @@ export class Tab1Page {
   beko:Boolean;
   data: any;
   constructor(private recipeService:RecipesService) {}
-  
+  data2:any;
+
+
+
+  search(name: string): void {
+    console.log("search çalıştı.")
+    console.log(name);
+    this.recipeService.searchRecipe(name).subscribe(res=> (
+    this.data2= res
+  ))
+  console.log(this.data2)
+  }
   
   ionViewWillEnter(){
     console.log('çalışıyor')
