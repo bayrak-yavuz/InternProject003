@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipesService } from '../services/recipes.service';
 
 @Component({
   selector: 'app-recipes',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesPage implements OnInit {
 
-  constructor() { }
+  data:any
+  constructor(private recipeService:RecipesService) { }
 
+  ionViewWillEnter(){
+
+  }
   ngOnInit() {
+  }
+
+  async getRecipes0(){
+    
+    await this.recipeService.getRecipes().subscribe(res => {this.data = res;
+       console.log(this.data); });
+    
   }
 
 }

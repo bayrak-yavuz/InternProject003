@@ -13,10 +13,17 @@ export class Tab1Page {
   
   beko:Boolean;
   data: any;
-  constructor(private recipeService:RecipesService) {}
+  constructor(
+    
+    private recipeService:RecipesService) {}
   data2:any;
 
-
+  Index(Isim:string){
+    console.log(Isim)
+    //console.log(this.data.name)
+    //recipesIndex = this.data.indexOf(Isim)
+    
+  }
 
   search(name: string): void {
     console.log("search çalıştı.")
