@@ -3,13 +3,13 @@
     <!-- <div class="header"> -->
       <div class="container-fluid">
         <div class="row align-items-center justify-content-center ">
-        <div class="col-1 text-end">
+        <div class="col-3 gx-0 text-end">
           <img class ="img "src="https://firebasestorage.googleapis.com/v0/b/ionicneyesem.appspot.com/o/result.svg?alt=media&token=8452c3ee-c968-42f3-a51b-8cec2b330393" >
         </div>
-        <div class="col-4 title"> NE YESEM
+        <div class="col-7 title"> NE YESEM
           <div class="col text"> Her şey mutfağa girmekle başlar.....</div>
         </div>
-        <div class="col-1 ">
+        <div class="col-2 gx-0">
           <ion-buttons slot="start">
             <ion-menu-button menu="main-menu"></ion-menu-button>
           </ion-buttons>
@@ -26,21 +26,25 @@
     <div class="center">
       <div class="rows">
         <div class="coll">
-          <input type="text" id="searchh" placeholder="Arama">
+          <input type="text" id="searchh" placeholder="Arama" #recipeName>
         </div>
-        <div><i class="fa fa-search search"></i></div>
+        <div><i (click)="search(recipeName.value); recipeName.value=''" class="fa fa-search search"></i></div>
       </div>
     </div>
 
-<div class="container-fluid">
+<div class="container-fluid p-3 ">
   <div class="row justify-content-center  "   >
-    <div class="col-3 kutu text-center " *ngFor="let data of data"   >
-      <div class="box-img text-center " style="background-image: url('{{data.photo}}');" ></div>
-      <div>{{data.name}}</div>
-      <div class="">
+    <div class="col-3 kutu text-center " *ngFor="let data of data" >
+    <a href="http://localhost:8100/recipes" (click)="Index(data.name)">
+      <div class="box-img text-center " style="background-image: url('{{data.photo}}');" >
+      
+      </div>
+      <div class="box-text text-center" >{{data.name}}</div>
+      <div class="box-star text-center">
         <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i> <i
         class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
       </div>
+    </a>  
     </div>
   </div>
 </div>

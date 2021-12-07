@@ -13,8 +13,14 @@ export class Tab1Page {
   
   beko:Boolean;
   data: any;
+<<<<<<< HEAD
   constructor(private recipeService:RecipesService) {}
 
+=======
+  constructor(
+    
+    private recipeService:RecipesService) {}
+>>>>>>> 1f2bc39b99c3db6966d544f1329815b51328a97d
   data2:any;
 
   Index(Isim:string){
@@ -32,8 +38,11 @@ export class Tab1Page {
   ))
   console.log(this.data2)
   }
+<<<<<<< HEAD
   
 
+=======
+>>>>>>> 1f2bc39b99c3db6966d544f1329815b51328a97d
   
   ionViewWillEnter(){
     console.log('çalışıyor')
