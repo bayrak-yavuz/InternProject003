@@ -39,7 +39,6 @@ export class Tab1Page {
     console.log('çalışıyor')
     this.beko=GlobalVariables.log;
     console.log(this.beko);
-    console.log
     this.getRecipes0()
   }
 
