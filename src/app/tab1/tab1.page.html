@@ -26,9 +26,9 @@
     <div class="center">
       <div class="rows">
         <div class="coll">
-          <input type="text" id="searchh" placeholder="Arama">
+          <input type="text" id="searchh" placeholder="Arama" #recipeName>
         </div>
-        <div><i class="fa fa-search search"></i></div>
+        <div><i (click)="search(recipeName.value); recipeName.value=''" class="fa fa-search search"></i></div>
       </div>
     </div>
 
