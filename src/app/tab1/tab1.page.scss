@@ -9,40 +9,52 @@
   font-size:1.4rem;
   padding-left: 2.8rem;
 }
-.logo{
-  
+.box-text{
+  font-size:1.2rem;
+}
+.box-star{
+  font-size:1.5rem;
 }
 
 .img{
   width: 60px;
   height: 50px;
 }
-.bottomBox{
-
-}
 .box-img{
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: auto;
-  height:120px;
+  width: 104%;
+  height: 180px;
+  text-align: center;
  // display:inline-block;
   
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .kutu{
-  margin:20px;
+
+  margin:10px;
   box-shadow:2px 2px rgb(143, 139, 139);
   border-radius: 10px;
 }
 
 @media screen and (max-width:1025px) {
   .text{
-    font-size: 1.0rem;
-    padding-left: 1.6rem;
+    font-size: 1.4rem;
+    padding-left: 2rem;
   }
   .title{
-    font-size:1.1rem;
+    font-size:1.6rem;
+  }
+  .box-img{
+    width: 105%;
+    height:150px ;
+  }
+  .box-text{
+    font-size:1.2rem;
+  }
+  .box-star{
+    font-size:1.5rem;
   }
   
 }
@@ -54,14 +66,57 @@
   .title{
     font-size:.9rem;
   }
+  .box-img{
+    width: 107%;
+    height:120px ;
+  }
+  .box-text{
+    font-size:1.0rem;
+  }
+  .box-star{
+    font-size:1.3rem;
+  }
 }
 @media screen and (max-width:426px) {
   .text{
-    font-size: .30rem;
-    padding-left: .6rem;
+    font-size: .60rem;
+    padding-left: .7rem;
   }
   .title{
-    font-size:.5rem;
+    font-size:1.0rem;
+  }
+  .box-img{
+    width: 115%;
+    height:100px ;
+  }
+  .box-text{
+    font-size:.8rem;
+  }
+  .box-star{
+    font-size:.8rem;
+  }
+}
+@media screen and (max-width:321px) {
+  .text{
+    font-size: .60rem;
+    padding-left: .7rem;
+  }
+  .title{
+    font-size:1.0rem;
+  }
+  .box-img{
+    width: 122%;
+    height:80px ;
+  }
+  .box-text{
+    font-size:.6rem;
+    width: 122%;
+
+  }
+  .box-star{
+    font-size:.65rem;
+    width: 122%;
+
   }
 }
 
