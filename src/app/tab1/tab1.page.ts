@@ -5,23 +5,25 @@ import { RecipesService } from '../services/recipes.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
+  providers: [ GlobalVariables ]
 })
 export class Tab1Page {
 
-
-  
+  index:number;
   beko:Boolean;
   data: any;
   constructor(
-    
+    private globals:GlobalVariables,
     private recipeService:RecipesService) {}
   data2:any;
 
-  Index(Isim:string){
-    console.log(Isim)
-    //console.log(this.data.name)
-    //recipesIndex = this.data.indexOf(Isim)
+  Index(Isim:string):void{
+    
+    // localStorage.setItem("index",this.data.indexOf(Isim))
+    // console.log(localStorage.getItem("index"))
+    this.globals.recipesIndex = this.data.indexOf(Isim)
+    console.log(this.globals.recipesIndex)
     
   }
 
