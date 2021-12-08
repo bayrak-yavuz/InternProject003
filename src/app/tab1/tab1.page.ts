@@ -13,6 +13,7 @@ export class Tab1Page {
   index:number;
   beko:Boolean;
   data: any;
+
   constructor(
     private globals:GlobalVariables,
     private recipeService:RecipesService) {}
@@ -35,12 +36,11 @@ export class Tab1Page {
   ))
   console.log(this.data2)
   }
-  
+
   ionViewWillEnter(){
     console.log('çalışıyor')
     this.beko=GlobalVariables.log;
     console.log(this.beko);
-    console.log
     this.getRecipes0()
   }
 
