@@ -1,10 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <!-- <div class="header"> -->
-      <div class="container-fluid">
-        <div class="row align-items-center justify-content-center ">
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-center ">
         <div class="col-3 gx-0 text-end">
-          <img class ="img "src="https://firebasestorage.googleapis.com/v0/b/ionicneyesem.appspot.com/o/result.svg?alt=media&token=8452c3ee-c968-42f3-a51b-8cec2b330393" >
+          <img class="img "
+            src="https://firebasestorage.googleapis.com/v0/b/ionicneyesem.appspot.com/o/result.svg?alt=media&token=8452c3ee-c968-42f3-a51b-8cec2b330393">
         </div>
         <div class="col-7 title"> NE YESEM
           <div class="col text"> Her şey mutfağa girmekle başlar.....</div>
@@ -32,12 +33,30 @@
       </div>
     </div>
 
+<<<<<<< HEAD
+    <div class="container-fluid p-3 ">
+      <div class="row justify-content-center  ">
+        <div class="col-3 kutu text-center " *ngFor="let data of data">
+          <a href="http://localhost:8100/recipes" (click)="Index(data.name)">
+            <div class="box-img text-center " style="background-image: url('{{data.photo}}');">
+
+            </div>
+            <div class="box-text text-center">{{data.name}}</div>
+            <div class="box-star text-center">
+              <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i> <i
+                class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+=======
 <div class="container-fluid p-3 ">
   <div class="row justify-content-center  "   >
     <div class="col-3 kutu text-center " *ngFor="let data of data" >
-    <a href="http://localhost:8100/recipes" (click)="Index(data.name)">
-      <div class="box-img text-center " style="background-image: url('{{data.photo}}');" >
-      
+    <a href="http://localhost:8100/recipes" (click)="Index(data,data.name)">
+      <div class="box-img text-center "   style="background-image: url('{{data.photo}}');" >
+
       </div>
       <div class="box-text text-center" >{{data.name}}</div>
       <div class="box-star text-center">
@@ -51,72 +70,9 @@
 
 
 
-    <div class="box">
-      <div class="boxes">
-
-        <div class="box2"> <img src="assets/images/1.jpg" style=" height: 65%;">
-          <p>hamburger</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box2"> <img src="assets/images/2.jpg" style=" height: 65%;">
-          <p>Pizza</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box3"><img src="assets/images/3.jpg" style=" height: 65%;">
-          <p>Pide</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-      </div>
-      <div class="boxes2">
-        <div class="box4"><img src="assets/images/4.jpg" style=" height: 65%;">
-          <p>Pankek</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box5"> <img src="assets/images/5.jpg" style=" height: 65%;">
-          <p>Baklava</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box6"> <img src="assets/images/6.jpg" style=" height: 65%;">
-          <p>Lahmacun</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-      </div>
-
-    </div>
-    <div class="boxx ">
-      <div class="boxes">
-
-        <div class="box1"> <img src="assets/images/7.jpg" style=" height: 65%;">
-          <p>Makarna</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box2"> <img src="assets/images/8.jpg" style=" height: 65%;">
-          <p>Waffle</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box3"><img src="assets/images/9.jpg" style=" height: 65%;">
-          <p>Köfte</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-      </div>
-      <div class="boxes2">
-        <div class="box4"><img src="assets/images/10.jpg" style=" height: 65%;">
-          <p>Dolma</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box5"> <img src="assets/images/11.jpg" style=" height: 65%;">
-          <p>Çorba</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-        <div class="box6"> <img src="assets/images/12.jpg" style=" height: 65%;">
-          <p>Sütlaç</p> <i class="fas fa-star star" style="margin-left: 8px;"></i><i class="fas fa-star star"></i> <i
-            class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i>
-        </div>
-      </div>
-       
-    </div>
+  
+>>>>>>> c77303212b0d0ee4a34404423b578ff1809a5778
   </div>
-
   <div *ngIf="beko!" class="footer">
     <div class="fot1">Yeterli değil mi?</div>
     <div class="fot2">Hesap açmayı deneyin</div>

@@ -1,8 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>recipes</ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content>
+  <div class="container-fluid">
+    <div class="row header">
+      <!-- Resim ve Geri-->
+      <div class="fixed-top text-center back backSvg " (click)="back()"></div>
+      <div class="absolute-top col-12 resImg" style="background-image: url('{{photo}}');"></div>
+    </div>
+    <div class="row res">
+      <!-- Hazırlanış -->
+      <div class="col-11 resTitle">Hazırlanışı</div>
+      <div class="col-12 resText">{{resText}}</div>
+    </div>
+    <div class="row res justify-content-end">
+      <!-- İçindekiler -->
+      <div class="col-11  resTitle " style="text-align: start; margin-bottom: 10px;">İçindekiler</div>
+    </div>
+    <div class="checkBox">
+      <div class="row" *ngFor="let item of items">
+        <div class="col-12 ">
+          <input type="checkbox"><label class="checkBoxText">{{item.line}}</label>
+        </div>
+  
+      </div>
+    </div>
 
+    
+    <div class="row fixed-bottom justify-content-center">
+      <!-- Yuvarlak -->
+      <div class="circle ">
+        <div class=" circleText text-center" >{{name}}</div>
+      <div class="circleStar text-center">
+        <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i> <i
+        class="fas fa-star-half-alt star"></i> <i class="far fa-star star"></i></div>
+    </div>
+    </div>
+
+
+  </div>
 </ion-content>

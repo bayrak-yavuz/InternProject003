@@ -5,28 +5,34 @@ import { RecipesService } from '../services/recipes.service';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  styleUrls: ['tab1.page.scss'],
+  providers: [ GlobalVariables ]
 })
 export class Tab1Page {
 
-
-  
+  index:number;
   beko:Boolean;
   data: any;
 <<<<<<< HEAD
-  constructor(private recipeService:RecipesService) {}
-
-=======
-  constructor(
+ 
+   constructor(
     
     private recipeService:RecipesService) {}
->>>>>>> 1f2bc39b99c3db6966d544f1329815b51328a97d
-  data2:any;
+   data2:any;
+=======
 
-  Index(Isim:string){
-    console.log(Isim)
-    //console.log(this.data.name)
-    //recipesIndex = this.data.indexOf(Isim)
+  constructor(
+    private globals:GlobalVariables,
+    private recipeService:RecipesService) {}
+  data2:any;
+>>>>>>> c77303212b0d0ee4a34404423b578ff1809a5778
+
+  Index(Isim:string):void{
+    
+    // localStorage.setItem("index",this.data.indexOf(Isim))
+    // console.log(localStorage.getItem("index"))
+    this.globals.recipesIndex = this.data.indexOf(Isim)
+    console.log(this.globals.recipesIndex)
     
   }
 
@@ -39,16 +45,16 @@ export class Tab1Page {
   console.log(this.data2)
   }
 <<<<<<< HEAD
-  
+   
 
+   
 =======
->>>>>>> 1f2bc39b99c3db6966d544f1329815b51328a97d
-  
+
+>>>>>>> c77303212b0d0ee4a34404423b578ff1809a5778
   ionViewWillEnter(){
     console.log('çalışıyor')
     this.beko=GlobalVariables.log;
     console.log(this.beko);
-    console.log
     this.getRecipes0()
   }
 
