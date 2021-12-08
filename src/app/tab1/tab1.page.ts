@@ -13,7 +13,7 @@ export class Tab1Page {
   index:number;
   beko:Boolean;
   data: any;
-
+  
  
 
   constructor(

@@ -3,6 +3,7 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Rout
 import { Observable } from 'rxjs';
 import { LoginService } from '../services/login.service';
 import{take, map,tap} from 'rxjs/operators'
+import { GlobalVariables } from '../global-var/global-variables';
  @Injectable()
 
 export class LoginGuard implements CanActivate {
@@ -28,9 +29,11 @@ export class LoginGuard implements CanActivate {
         {
           if(!isLoggedIn)
           {
+            GlobalVariables.log=true
           this.router.navigate(['/tabs/login']);
           return false;
         }
+        GlobalVariables.log=false
         return true;
         })
     );
