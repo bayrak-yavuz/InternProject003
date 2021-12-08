@@ -31,7 +31,7 @@ import { GlobalVariables } from './global-var/global-variables';
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence({synchronizeTabs:true}),
     AngularFireStorageModule,
 
   ],
