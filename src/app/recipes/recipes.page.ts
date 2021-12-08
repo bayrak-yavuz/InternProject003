@@ -1,8 +1,11 @@
+import { GlobalVariables } from './../global-var/global-variables';
+import { LoginGuard } from './../guards/login.guard';
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
-import { GlobalVariables } from '../global-var/global-variables';
 import { Location } from '@angular/common';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
@@ -24,15 +27,18 @@ export class RecipesPage implements OnInit {
   data: any
   constructor(
     private location: Location,
-    private globals: GlobalVariables,
-    private recipeService: RecipesService) {
+   // private globals: GlobalVariables,
+    private auth: AngularFireAuth,
+    private recipeService: RecipesService,
+    private loginGuard:LoginGuard,
+    private afsg:AngularFireAuthGuard) {
 
     console.log(this.items)
-    console.log(globals.recipesIndex);
+   // console.log(globals.recipesIndex);
   }
 
 
-  index = this.globals.recipesIndex
+  //index = this.globals.recipesIndex
   ionViewWillEnter() {
     this.getRecipes0()
   }
@@ -48,6 +54,13 @@ export class RecipesPage implements OnInit {
 
   }
   back() {
-    this.location.back();
+
+    
+  
+
+
+     this.location.back();
+
+    
   }
 }

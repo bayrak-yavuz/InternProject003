@@ -1,6 +1,7 @@
 import { GlobalVariables } from './../global-var/global-variables';
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-tab1',
@@ -17,16 +18,17 @@ export class Tab1Page {
  
 
   constructor(
-    private globals:GlobalVariables,
-    private recipeService:RecipesService) {}
+   // private globals:GlobalVariables,
+    private recipeService:RecipesService,
+    private auth: AngularFireAuth) {}
   data2:any;
 
   Index(Isim:string):void{
     
     // localStorage.setItem("index",this.data.indexOf(Isim))
     // console.log(localStorage.getItem("index"))
-    this.globals.recipesIndex = this.data.indexOf(Isim)
-    console.log(this.globals.recipesIndex)
+   // this.globals.recipesIndex = this.data.indexOf(Isim)
+    //console.log(this.globals.recipesIndex)
     
   }
 
@@ -40,8 +42,18 @@ export class Tab1Page {
   }
 
   ionViewWillEnter(){
+
+    this.auth.authState.subscribe(res => {
+      if (res && res.uid) {
+        console.log('user  logged in');
+        this.beko=false;
+      } else {
+        console.log('user not logged in');
+        this.beko=true
+      }
+    });
+
     console.log('çalışıyor')
-    this.beko=GlobalVariables.log;
     console.log(this.beko);
     this.getRecipes0()
   }
