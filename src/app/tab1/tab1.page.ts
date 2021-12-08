@@ -13,19 +13,13 @@ export class Tab1Page {
   index:number;
   beko:Boolean;
   data: any;
-<<<<<<< HEAD
+
  
-   constructor(
-    
-    private recipeService:RecipesService) {}
-   data2:any;
-=======
 
   constructor(
     private globals:GlobalVariables,
     private recipeService:RecipesService) {}
   data2:any;
->>>>>>> c77303212b0d0ee4a34404423b578ff1809a5778
 
   Index(Isim:string):void{
     
@@ -44,13 +38,7 @@ export class Tab1Page {
   ))
   console.log(this.data2)
   }
-<<<<<<< HEAD
-   
 
-   
-=======
-
->>>>>>> c77303212b0d0ee4a34404423b578ff1809a5778
   ionViewWillEnter(){
     console.log('çalışıyor')
     this.beko=GlobalVariables.log;

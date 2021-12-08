@@ -23,7 +23,7 @@ export class RecipesService {
     }
     getRecipe(id:string){
       return this.afs.doc('tarifler/' +id).get();
-<<<<<<< HEAD
+
       }
      
 
@@ -34,17 +34,5 @@ export class RecipesService {
 }
   
  
-=======
-
-     }
     
 
-
-      searchRecipe(name:String){
-      console.log("search service calıstı")
-      return this.afs.collection("tarifler",ref=>ref.where("name","==",name)).snapshotChanges()
-      }
-
-    
-}
->>>>>>> c77303212b0d0ee4a34404423b578ff1809a5778
