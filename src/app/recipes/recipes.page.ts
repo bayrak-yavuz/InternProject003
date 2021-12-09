@@ -5,7 +5,7 @@ import { RecipesService } from '../services/recipes.service';
 import { Location } from '@angular/common';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
@@ -15,36 +15,72 @@ export class RecipesPage implements OnInit {
 
   photo = "https://firebasestorage.googleapis.com/v0/b/ionicneyesem.appspot.com/o/kobu-agency-TWIRIAizZFU-unsplash.jpg?alt=media&token=80a4eecc-608b-44d9-8097-9c0c9f8a4dd3"
   resText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aspernatur quibusdam explicabo maiores eaque perspiciatis repellat harum dignissimos, accusantium nesciunt sequi odio ad aliquid repudiandae, quis unde quos! Incidunt, voluptates."
-  items=[
+  items = [
     {
-      line:" bardak"
+      line: " bardak"
     },
     {
-      line:" bir şişe su"
+      line: " bir şişe su"
     },
   ]
-  name="Bir bardak su"
+  name = "Bir bardak su"
   data: any
+  id=""
+  dataIndex: any
+  recipe:any
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private location: Location,
-   // private globals: GlobalVariables,
+    // private globals: GlobalVariables,
     private auth: AngularFireAuth,
     private recipeService: RecipesService,
-    private loginGuard:LoginGuard,
-    private afsg:AngularFireAuthGuard) {
+    private loginGuard: LoginGuard,
+    private afsg: AngularFireAuthGuard) {
 
-    console.log(this.items)
-   // console.log(globals.recipesIndex);
+    // console.log(globals.recipesIndex);
   }
 
 
   //index = this.globals.recipesIndex
   ionViewWillEnter() {
     this.getRecipes0()
+
+
+    this.router.events.subscribe(res => {
+      if (res instanceof NavigationEnd) {
+        this.id = res.url
+        console.log(this.id)
+      }
+      if (this.id == this.data.find(res => res.id == this.id)) {
+        this.dataIndex = this.data.indexOf(this.id)
+        this.name = this.data[this.dataIndex].name
+        this.photo = this.data[this.dataIndex].photo
+      }
+      else {
+        this.id = "fni7PJXwZk5GANFBHp4V"
+      }
+    })
+
+    //this.getRecipe("fni7PJXwZk5GANFBHp4V")
+
+
   }
   ngOnInit() {
+
+
   }
 
+
+  // async getRecipe(id:string) {
+
+  //   await this.recipeService.getRecipe(id).subscribe(res => {
+  //     this.recipe = res;
+  //     console.log(this.recipe);
+  //   });
+
+  // }
+  
   async getRecipes0() {
 
     await this.recipeService.getRecipes().subscribe(res => {
@@ -55,12 +91,12 @@ export class RecipesPage implements OnInit {
   }
   back() {
 
-    
-  
 
 
-     this.location.back();
 
-    
+
+    this.location.back();
+
+
   }
 }

@@ -2,6 +2,7 @@ import { GlobalVariables } from './../global-var/global-variables';
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { time } from 'console';
 
 @Component({
   selector: 'app-tab1',
@@ -11,26 +12,36 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class Tab1Page {
 
-  index:number;
+  //currentlyIndex:string;
   beko:Boolean;
   data: any;
+  idies:string;
   
  
 
   constructor(
-   // private globals:GlobalVariables,
+  //  private globals:GlobalVariables,
     private recipeService:RecipesService,
     private auth: AngularFireAuth) {}
   data2:any;
 
-  Index(Isim:string):void{
+
+
+// Index(Isim:string){
+//   console.log(Isim)
+//   this.idies=Isim
+//   console.log(this.idies)
+// }
+
+  // isIndex(Isim:string){
+
+  // if(Isim==this.data.id  ){
     
-    // localStorage.setItem("index",this.data.indexOf(Isim))
-    // console.log(localStorage.getItem("index"))
-   // this.globals.recipesIndex = this.data.indexOf(Isim)
-    //console.log(this.globals.recipesIndex)
-    
-  }
+  //   console.log(this.data.id)
+  //   console.log(Isim)
+  //   return Isim
+  // }     
+  // }
 
   search(name: string): void {
     console.log("search çalıştı.")
@@ -53,9 +64,15 @@ export class Tab1Page {
       }
     });
 
+
     console.log('çalışıyor')
     console.log(this.beko);
+
+
     this.getRecipes0()
+
+    //this.data.filter(res => res.id == this.idies);
+
   }
 
 
