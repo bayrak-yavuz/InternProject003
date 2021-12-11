@@ -13,90 +13,50 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 })
 export class RecipesPage implements OnInit {
 
-  photo = "https://firebasestorage.googleapis.com/v0/b/ionicneyesem.appspot.com/o/kobu-agency-TWIRIAizZFU-unsplash.jpg?alt=media&token=80a4eecc-608b-44d9-8097-9c0c9f8a4dd3"
-  resText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque aspernatur quibusdam explicabo maiores eaque perspiciatis repellat harum dignissimos, accusantium nesciunt sequi odio ad aliquid repudiandae, quis unde quos! Incidunt, voluptates."
-  items = [
-    {
-      line: " bardak"
-    },
-    {
-      line: " bir şişe su"
-    },
-  ]
-  name = "Bir bardak su"
-  data: any
-  id=""
-  dataIndex: any
+  photo :any
+  resText :any
+  items = []
+  name :any
+  id:any
   recipe:any
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    // private globals: GlobalVariables,
     private auth: AngularFireAuth,
     private recipeService: RecipesService,
     private loginGuard: LoginGuard,
     private afsg: AngularFireAuthGuard) {
-
-    // console.log(globals.recipesIndex);
   }
 
-
-  //index = this.globals.recipesIndex
   ionViewWillEnter() {
-    this.getRecipes0()
+    this.id=window.localStorage.getItem('myId')
+    console.log(this.id)
+    this.getRescipe(this.id)
 
-
-    this.router.events.subscribe(res => {
-      if (res instanceof NavigationEnd) {
-        this.id = res.url
-        console.log(this.id)
-      }
-      if (this.id == this.data.find(res => res.id == this.id)) {
-        this.dataIndex = this.data.indexOf(this.id)
-        this.name = this.data[this.dataIndex].name
-        this.photo = this.data[this.dataIndex].photo
-      }
-      else {
-        this.id = "fni7PJXwZk5GANFBHp4V"
-      }
-    })
-
-    //this.getRecipe("fni7PJXwZk5GANFBHp4V")
-
+  }
+  ionViewDidEnter(){
 
   }
   ngOnInit() {
 
 
-  }
-
-
-  // async getRecipe(id:string) {
-
-  //   await this.recipeService.getRecipe(id).subscribe(res => {
-  //     this.recipe = res;
-  //     console.log(this.recipe);
-  //   });
-
-  // }
-  
-  async getRecipes0() {
-
-    await this.recipeService.getRecipes().subscribe(res => {
-      this.data = res;
-      console.log(this.data);
-    });
-
-  }
+  }  
   back() {
-
-
-
-
-
     this.location.back();
-
-
   }
+  async getRescipe(id: string){
+    await this.recipeService.getRecipe(id).subscribe(res=>{
+     this.recipe=res.data();
+     this.photo=this.recipe.photo;
+     this.name=this.recipe.name;
+     this.resText=this.recipe.recipes;
+     this.items=this.recipe.checkList;
+    console.log(this.recipe)
+    console.log(this.items)
+    });
+   
+  }
+
+
 }

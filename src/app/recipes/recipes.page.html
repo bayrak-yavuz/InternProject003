@@ -3,7 +3,10 @@
     <div class="row header">
       <!-- Resim ve Geri-->
       <div class="fixed-top text-center back backSvg " (click)="back()"></div>
-      <div class="absolute-top col-12 resImg" style="background-image: url('{{photo}}');"></div>
+      <div class="col-12 gx-0">
+        <div class="absolute-top resImg" style="background-image: url('{{photo}}');"></div>
+
+      </div>
     </div>
     <div class="row res">
       <!-- Hazırlanış -->
@@ -17,7 +20,7 @@
     <div class="checkBox">
       <div class="row" *ngFor="let item of items">
         <div class="col-12 ">
-          <input type="checkbox"><label class="checkBoxText">{{item.line}}</label>
+          <input type="checkbox"><label class="checkBoxText">{{item}}</label>
         </div>
   
       </div>

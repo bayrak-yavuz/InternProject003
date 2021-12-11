@@ -22,7 +22,7 @@ export class RecipesService {
       
     }
     getRecipe(id:string){
-      return this.afs.doc('tarifler/' +id).get();
+      return this.afs.collection('tarifler').doc(id).get()
 
       }
      

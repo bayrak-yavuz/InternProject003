@@ -27,11 +27,14 @@ export class Tab1Page {
 
 
 
-// Index(Isim:string){
-//   console.log(Isim)
-//   this.idies=Isim
-//   console.log(this.idies)
-// }
+Index(Isim:string){
+  window.localStorage.setItem('myId',Isim)
+  console.log(window.localStorage.getItem('myId'))
+  
+  // console.log(Isim)
+  // this.idies=Isim
+  // console.log(this.idies)
+}
 
   // isIndex(Isim:string){
 

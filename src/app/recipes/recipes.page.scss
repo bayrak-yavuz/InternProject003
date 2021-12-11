@@ -18,11 +18,11 @@
 
 }
 .header{
-    height: 300px;
+    height: auto;
 }
 .resImg{
     background-size: 100% 100%;
-    width: 320px;
+    width: auto;
     height: 300px;
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
@@ -50,7 +50,8 @@
     font-family: "PosteramaTextW07-Regular";
 }
 .checkBox{
-height: 200px;
+height: auto;
+margin-bottom: 80px;
 
 }
 .checkBoxText{
@@ -62,7 +63,6 @@ height: 200px;
 }
 
 .circle{
-    
     
     height: 200px;
     width: 400px;
