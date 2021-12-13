@@ -30,6 +30,7 @@
     "@ionic/angular": "^5.5.2",
     "cordova-plugin-firebase": "^2.0.5",
     "firebase": "^9.5.0",
+    "natives": "^1.1.6",
     "rxjs": "~6.6.0",
     "tabs": "^0.2.0",
     "tslib": "^2.2.0",
