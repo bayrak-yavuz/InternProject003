@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { time } from 'console';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -22,7 +23,8 @@ export class Tab1Page {
   constructor(
   //  private globals:GlobalVariables,
     private recipeService:RecipesService,
-    private auth: AngularFireAuth) {}
+    private auth: AngularFireAuth,
+    private router:Router) {}
   data2:any;
 
 
@@ -51,6 +53,7 @@ Index(Isim:string){
     console.log(name);
     this.recipeService.searchRecipe(name).subscribe(res=> (
     this.data2= res
+
   ))
   console.log(this.data2)
   }
