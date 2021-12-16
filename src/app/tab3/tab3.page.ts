@@ -1,11 +1,12 @@
 import { GlobalVariables } from './../global-var/global-variables';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { LoginService } from '../services/login.service';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/storage';
 import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 export interface imageData{
   fileName:string;
   filePath:string;
@@ -16,13 +17,16 @@ export interface imageData{
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page implements OnInit{
 user:any;
 fileName:string;
 fileSize:string;
 isLoading:boolean;
 isLoaded:boolean;
 private imageCollection:AngularFirestoreCollection<imageData>;
+  imagefile:Observable<imageData[]>;
+  imageUpload:AngularFireUploadTask;
+
   constructor(
     private login:LoginService,
     private router:Router,
@@ -32,6 +36,8 @@ private imageCollection:AngularFirestoreCollection<imageData>;
   ) {
     this.isLoaded=false;
     this.isLoading=false;
+    this.imageCollection=this.database.collection<imageData>('users');
+    this.imagefile=this.imageCollection.valueChanges();
   }
 
 logout()
@@ -63,11 +69,11 @@ addImage(event){
   console.log(file);
    var fileName=file[0];
   console.log(fileName);
+  console.log(this.user.userId)
 
-  if(fileName.type.split('/')[0] !=="image"){
-    console.error("file is not image");
-    return;
-  }
+  const path=`users/${this.user.userId}/${fileName.name}`;
+  var fileRef=this.storage.ref(path);
+  this.imageUpload=this.storage.upload(path,fileName);
 }
 }
 
