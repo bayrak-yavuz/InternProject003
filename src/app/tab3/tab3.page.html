@@ -31,5 +31,10 @@
 <p></p>  </div>
     </div>
   </div>
+  <ion-button expand="block" *ngIf="!isLoading && !isLoaded" shape="round" class="image">
+    <ion-icon name="images" style="margin-right: 5px;"></ion-icon>
+  <input type="file" (ionChange)="addImage($event)">
+  </ion-button>
   <ion-button class="logout" expand="block" shape="round" (click)="logout()">Çıkış Yap</ion-button>
+
 </ion-content>
