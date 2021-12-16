@@ -55,7 +55,7 @@ Index(Isim:string){
     this.recipeService.searchRecipe(name).subscribe(res=> (
       this.data2= res
      ))
-     this.router.navigateByUrl("/recipes/:data2.id")
+     this.router.navigateByUrl("/recipes/2yIuy45oi5UBKYHJT94Z")
   }
 
   ionViewWillEnter(){

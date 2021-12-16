@@ -30,7 +30,18 @@ export class RecipesPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.id=window.localStorage.getItem('myId')
+    
+    
+    // this.router.events.subscribe(res=>{
+    //   if(res instanceof NavigationEnd){
+    //     this.id=res.url
+        
+    //   }
+     
+    // })
+   this.id=this.route.snapshot.params.id
+   
+    console.log(this.router.url)
     console.log(this.id)
     this.getRescipe(this.id)
     
