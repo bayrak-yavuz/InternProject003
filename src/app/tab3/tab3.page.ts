@@ -7,6 +7,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/
 import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
+import { LoadingController } from '@ionic/angular';
 export interface imageData{
   fileName:string;
   filePath:string;
@@ -19,6 +20,7 @@ export interface imageData{
 })
 export class Tab3Page implements OnInit{
 user:any;
+profileImage:any;
 fileName:string;
 fileSize:string;
 isLoading:boolean;
@@ -33,6 +35,7 @@ private imageCollection:AngularFirestoreCollection<imageData>;
     private toastr:ToastController,
     private storage:AngularFireStorage,
     private database:AngularFirestore,
+    private loading:LoadingController,
   ) {
     this.isLoaded=false;
     this.isLoading=false;
@@ -64,16 +67,35 @@ ngOnInit()
     this.user=user;
    })
 }
-addImage(event){
+async addImage(event){
+  const load = await this.loading.create({
+    message: 'Yükleniyor...',
+    spinner: 'crescent',
+    showBackdrop: true,
+ 
+  })
+  load.present();
   const file = event.target.files;
-  console.log(file);
-   var fileName=file[0];
-  console.log(fileName);
-  console.log(this.user.userId)
+    var fileName=file[0];
 
   const path=`users/${this.user.userId}/${fileName.name}`;
   var fileRef=this.storage.ref(path);
   this.imageUpload=this.storage.upload(path,fileName);
+  this.loading.dismiss();
+  this.imageUpload.then(res=>{
+    var imagefile=res.task.snapshot.ref.getDownloadURL();
+    imagefile.then(downloadableUrl=>{
+      console.log("URL:",downloadableUrl);
+     })
+  })
+ if(this.user){
+  const result=this.database.doc(`/user/${this.user.userId}`);
+  var userprofile=result.valueChanges();
+  userprofile.subscribe(user =>{
+    console.log("PROFILE:::",user);
+    this.user.photourl=user['photourl'];
+  })
+ }
 }
 }
 
