@@ -53,11 +53,9 @@ Index(Isim:string){
     console.log("search çalıştı.")
     console.log(name);
     this.recipeService.searchRecipe(name).subscribe(res=> (
-    this.data2= res)
-  
-  )
-  
-  console.log(this.data2)
+      this.data2= res
+     ))
+     this.router.navigateByUrl("/recipes/:data2.id")
   }
 
   ionViewWillEnter(){
