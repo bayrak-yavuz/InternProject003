@@ -33,7 +33,7 @@ export class RecipesPage implements OnInit {
     this.id=window.localStorage.getItem('myId')
     console.log(this.id)
     this.getRescipe(this.id)
-
+    
   }
   ionViewDidEnter(){
 

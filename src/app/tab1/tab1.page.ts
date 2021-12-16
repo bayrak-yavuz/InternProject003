@@ -4,6 +4,7 @@ import { RecipesService } from '../services/recipes.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { time } from 'console';
 import { Router } from '@angular/router';
+import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-tab1',
@@ -52,9 +53,10 @@ Index(Isim:string){
     console.log("search çalıştı.")
     console.log(name);
     this.recipeService.searchRecipe(name).subscribe(res=> (
-    this.data2= res
-
-  ))
+    this.data2= res)
+  
+  )
+  
   console.log(this.data2)
   }
 
