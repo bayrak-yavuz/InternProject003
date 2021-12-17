@@ -17,8 +17,12 @@
 
   <div class="profile">
 
-    <div class="bilgi">  <img src="assets/images/pp.PNG" style="width: 150px; height: 140px; text-align: center;"></div>
-    <div class="photo">
+    <div class="bilgi"> 
+      <ion-avatar style=" text-align: center;"> 
+      <ion-img [src]="user?.photourl "> </ion-img>
+      </ion-avatar>
+    </div>
+      <div class="photo">
   
 
     <div class="bilgi2">  <H2>Hoşgeldin  {{user?.userName}}</H2>
@@ -31,18 +35,11 @@
 <p></p>  </div>
     </div>
   </div>
-  <div class="containerWrap">
   <ion-button expand="block" *ngIf="!isLoading && !isLoaded" shape="round" class="image">
     <ion-icon name="images" style="margin-right: 5px;"></ion-icon>
   <input type="file" (change)="addImage($event)" accept="image/png, image/jpg" id="file-input">
   </ion-button>
-  <ion-card *ngIf="isLoading && !isLoaded">
-    <ion-card-content *ngIf="percentage | async as percent">
-      Progress:{{percent | number}}%
-      <ion-progress-bar value="{{percent/100}}"></ion-progress-bar>
-      </ion-card-content>
-      </ion-card>
-      </div>
+
   <ion-button class="logout" expand="block" shape="round" (click)="logout()">Çıkış Yap</ion-button>
 
 </ion-content>

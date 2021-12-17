@@ -86,17 +86,15 @@ h2
 text-align: center;
 }
 .bilgi{
-   width: 100%;
-   text-align: center;
+position: relative;   
+text-align: center;
 }
-.photo
-{
-   width: 100%;
-}
+ 
 .bilgi2
 {
-  width: 100%;
-
+ position: relative;
+ text-align: center;
+ 
 }
 i{
   margin-top: 45px;
@@ -106,7 +104,9 @@ i{
 b{
   margin-left: 15px;
 }
-img{
-
-
+ion-avatar{
+height: 150px;
+width: 150px;
+margin: auto;
+border:4px solid #F9722E;
 }
