@@ -8,10 +8,14 @@ import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { LoadingController } from '@ionic/angular';
+import { User } from '../models/user';
+
 export interface imageData{
   fileName:string;
   filePath:string;
   size:string;
+  user$: Observable<User>;
+  user: User;
 }
 @Component({
   selector: 'app-tab3',
@@ -86,6 +90,7 @@ async addImage(event){
     var imagefile=res.task.snapshot.ref.getDownloadURL();
     imagefile.then(downloadableUrl=>{
       console.log("URL:",downloadableUrl);
+      this.user.photourl=downloadableUrl ;
      })
   })
  if(this.user){
@@ -93,7 +98,7 @@ async addImage(event){
   var userprofile=result.valueChanges();
   userprofile.subscribe(user =>{
     console.log("PROFILE:::",user);
-    this.user.photourl=user['photourl'];
+ 
   })
  }
 }

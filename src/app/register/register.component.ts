@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { LoginService } from '../services/login.service';
 import { Location } from '@angular/common';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-register',
@@ -18,6 +19,7 @@ export class RegisterComponent implements OnInit {
   phone: string;
   password: string;
  confirmpassword:string;
+ photoUrl:string;
   constructor(
     private afs: AngularFirestore,
     private afaut: AngularFireAuth,
@@ -51,7 +53,7 @@ export class RegisterComponent implements OnInit {
             'userName': this.name,
             'userEmail': this.email,
             'userPhone': this.phone,
-            'createdAt': Date.now()
+            'createdAt': Date.now(),
           }).then(() => {
               loading.dismiss();
               this.toast('Kayıt başarılı lütfen e-postanızı kontrol edin!', 'success');
