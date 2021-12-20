@@ -18,9 +18,9 @@ export class Tab2Page {
    getId(name:string){
     
      this.categoryService.getCategoryId(name).subscribe(res=> (
-      this.data= res,
+      this.data= res[0],
       console.log(this.data.id),
-      this.router.navigateByUrl('categorized/'+this.data.categoryId)
+      this.router.navigateByUrl('categorized/'+this.data.id)
      ))
     
       

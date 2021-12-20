@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./recipes/recipes.module').then( m => m.RecipesPageModule)
   },
   {
-    path:'categorized/:categoryName',
+    path:'categorized/:categoryId',
     loadChildren: () => import('./categorized-recipes/categorized-recipes.module').then( m => m.CategorizedRecipesPageModule)
   }
 

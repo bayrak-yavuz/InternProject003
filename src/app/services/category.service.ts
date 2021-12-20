@@ -10,7 +10,11 @@ export class CategoryService {
     ) { }
 
      getCategoryId(name:string){
-      return  this.afs.collection("kategoriler",ref=>ref.where("name","==",name)).snapshotChanges()
+      return  this.afs.collection("kategoriler",ref=>ref.where("name","==",name)).valueChanges()
+
+    }
+    getCategoryName(id:string){
+      return  this.afs.collection("kategoriler",ref=>ref.where("id","==",id)).valueChanges()
 
     }
 

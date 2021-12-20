@@ -26,7 +26,7 @@ export class RecipesService {
 
       }
     getRecipesWithCategory(categoryId:String){
-      return this.afs.collection("tarifler",ref=>ref.where("categoryId","==",categoryId)).snapshotChanges()
+      return this.afs.collection("tarifler",ref=>ref.where("categoryId","array-contains",categoryId)).snapshotChanges()
     }
      
 
