@@ -1,3 +1,5 @@
+import { Router, ActivatedRoute } from '@angular/router';
+import { CategoryService } from './../services/category.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +9,22 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
-   
+  constructor(private categoryService:CategoryService,
+    private router:Router,
+   ) {}
+  data:any
+  
+  
+   getId(name:string){
+    
+     this.categoryService.getCategoryId(name).subscribe(res=> (
+      this.data= res,
+      console.log(this.data.id),
+      this.router.navigateByUrl('categorized/'+this.data.categoryId)
+     ))
+    
+      
+  
+  }
 }
+

@@ -25,6 +25,9 @@ export class RecipesService {
       return this.afs.collection('tarifler').doc(id).get()
 
       }
+    getRecipesWithCategory(categoryId:String){
+      return this.afs.collection("tarifler",ref=>ref.where("categoryId","==",categoryId)).snapshotChanges()
+    }
      
 
     searchRecipe(name:String){
