@@ -13,7 +13,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./categorized-recipes.page.scss'],
 })
 export class CategorizedRecipesPage implements OnInit {
-  data2:any
+  
   constructor(private recipeService:RecipesService,
     private auth: AngularFireAuth,
     private router:Router,
@@ -25,12 +25,10 @@ export class CategorizedRecipesPage implements OnInit {
   }
   beko:Boolean;
   data: any;
+  cate:any
   ionViewWillEnter(){
 
-    this.categoryService.getCategoryName(this.route.snapshot.params.categoryId).subscribe(res=> (
-      this.data2= res[0]
-     ))
-     console.log(this.data2)
+     
 
     this.auth.authState.subscribe(res => {
       if (res && res.uid) {
@@ -46,7 +44,7 @@ export class CategorizedRecipesPage implements OnInit {
     console.log('çalışıyor')
     console.log(this.beko);
 
-
+    this.getHeader()
     this.getRecipes0()
 
     //this.data.filter(res => res.id == this.idies);
@@ -60,6 +58,14 @@ export class CategorizedRecipesPage implements OnInit {
     // console.log(Isim)
     // this.idies=Isim
     // console.log(this.idies)
+  }
+  async getHeader(){
+    await
+    this.categoryService.getCategoryName(this.route.snapshot.params.categoryId).subscribe(res=> (
+      this.cate= res[0],
+      console.log(this.cate.name)
+     ))
+      
   }
 
   async getRecipes0(){
