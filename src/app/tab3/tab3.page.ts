@@ -98,6 +98,7 @@ async addImage(event){
   var userprofile=result.valueChanges();
   userprofile.subscribe(user =>{
     console.log("PROFILE:::",user);
+    this.database.doc('user/'+this.user.userid).update({photoUrl:this.user.userPhoto})
  
   })
  }

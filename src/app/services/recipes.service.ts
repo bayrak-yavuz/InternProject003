@@ -28,7 +28,7 @@ export class RecipesService {
      
 
     searchRecipe(name:String){
-      console.log("search service calıstı")
+      console.log("search service calıstı " + name +" aranıyor...")
       return this.afs.collection("tarifler",ref=>ref.where("name","==",name)).snapshotChanges()
     }
 }

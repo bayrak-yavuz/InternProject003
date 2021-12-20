@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { time } from 'console';
 import { Router } from '@angular/router';
 import { threadId } from 'worker_threads';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -25,8 +26,9 @@ export class Tab1Page {
   //  private globals:GlobalVariables,
     private recipeService:RecipesService,
     private auth: AngularFireAuth,
-    private router:Router) {}
-  data2:any;
+    private router:Router,
+    private toastr:ToastController) {}
+  
 
 
 
@@ -48,14 +50,29 @@ Index(Isim:string){
   //   return Isim
   // }     
   // }
-
+  data2:any;
   search(name: string): void {
     console.log("search çalıştı.")
-    console.log(name);
+    
+    
+    
     this.recipeService.searchRecipe(name).subscribe(res=> (
       this.data2= res
      ))
+
+
+
+
+
+     console.log(this.data2)
+     console.log(this.data2.id)
+
+     if (this.data2==undefined){
+       this.toast('Aradığınız Sonuç Bulunamadı','warning');
+     }
+     else{
      this.router.navigate(['/recipes', this.data2.id]);
+     }
   }
 
   ionViewWillEnter(){
@@ -88,6 +105,16 @@ Index(Isim:string){
        console.log(this.data); });
     
   }
+  async toast(message,status)
+  {
+    const toast=await this.toastr.create({
+      message:message,
+      color:status,
+      position:'top',
+      duration:2000,
+    }) ;
+    toast.present();
+  }//end tast
     
 }
 
