@@ -91,6 +91,8 @@ async addImage(event){
     imagefile.then(downloadableUrl=>{
       console.log("URL:",downloadableUrl);
       this.user.photourl=downloadableUrl ;
+      this.database.doc('user/'+this.user.userId).update({photourl:downloadableUrl})
+
      })
   })
  if(this.user){
@@ -98,7 +100,6 @@ async addImage(event){
   var userprofile=result.valueChanges();
   userprofile.subscribe(user =>{
     console.log("PROFILE:::",user);
-    this.database.doc('user/'+this.user.userid).update({photoUrl:this.user.userPhoto})
  
   })
  }
