@@ -6,6 +6,7 @@ import { time } from 'console';
 import { Router, ActivatedRoute } from '@angular/router';
 import { threadId } from 'worker_threads';
 import { ToastController } from '@ionic/angular';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-categorized-recipes',
@@ -19,7 +20,9 @@ export class CategorizedRecipesPage implements OnInit {
     private router:Router,
     private toastr:ToastController,
     private categoryService:CategoryService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private location: Location,
+    ) { }
 
   ngOnInit() {
   }
@@ -49,6 +52,9 @@ export class CategorizedRecipesPage implements OnInit {
 
     //this.data.filter(res => res.id == this.idies);
 
+  }
+  back() {
+    this.location.back();
   }
 
   Index(Isim:string){
