@@ -1,3 +1,4 @@
+import { RecipesService } from './../services/recipes.service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { GlobalVariables } from '../global-var/global-variables';
@@ -8,7 +9,8 @@ import { GlobalVariables } from '../global-var/global-variables';
 })
 export class SavedComponent implements OnInit {
 
-  constructor(private location: Location,) { }
+  constructor(private location: Location,
+              private recipesService:RecipesService) { }
 
   ngOnInit() {
     
@@ -18,7 +20,11 @@ export class SavedComponent implements OnInit {
 
   }
   ionViewWillEnter(){
-    GlobalVariables.log=false;
+    
+  }
+
+  getSaved(){
+
   }
 
 }
