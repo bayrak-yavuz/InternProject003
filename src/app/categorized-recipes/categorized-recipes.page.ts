@@ -53,7 +53,7 @@ export class CategorizedRecipesPage implements OnInit {
     //this.data.filter(res => res.id == this.idies);
 
   }
-  back() {
+  goBack() {
     this.location.back();
   }
 
