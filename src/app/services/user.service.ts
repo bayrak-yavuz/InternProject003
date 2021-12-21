@@ -8,4 +8,8 @@ export class UserService {
 
   constructor(private afs:AngularFirestore,
     ) { }
+
+    listSaved(userId:String){
+      return this.afs.collection("user/"+userId+"/saved").valueChanges()
+    }
 }

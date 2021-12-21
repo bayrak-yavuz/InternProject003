@@ -34,6 +34,9 @@ export class RecipesService {
       console.log("search service calıstı " + name +" aranıyor...")
       return this.afs.collection("tarifler",ref=>ref.where("name","==",name)).snapshotChanges()
     }
+    getSavedRecipes(id:String){
+      return this.afs.collection("tarifler",ref=>ref.where("id","==",id)).snapshotChanges()
+    }
 }
   
  
