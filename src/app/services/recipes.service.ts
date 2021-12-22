@@ -35,7 +35,7 @@ export class RecipesService {
       return this.afs.collection("tarifler",ref=>ref.where("name","==",name)).snapshotChanges()
     }
     getSavedRecipes(id:String){
-      return this.afs.collection("tarifler",ref=>ref.where("id","==",id)).snapshotChanges()
+      return this.afs.collection("tarifler",ref=>ref.where("userId","array-contains-any",id)).snapshotChanges()
     }
 }
   

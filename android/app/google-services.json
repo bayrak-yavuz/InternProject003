@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1026798085847",
+    "project_id": "ionicneyesem",
+    "storage_bucket": "ionicneyesem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026798085847:android:8c3586e744bb0f41bd7292",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026798085847-4t0orolvhkf0p42ptkjrn5fad1ql5cgo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBucj38JUAQrWQ6mhJG7KbuyWx88-w7Fb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026798085847-4t0orolvhkf0p42ptkjrn5fad1ql5cgo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
