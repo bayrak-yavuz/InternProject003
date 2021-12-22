@@ -41,6 +41,9 @@ export class RecipesService {
       return this.afs.collection('tarifler').doc(recipeId).get()
 
       }
+
+     
+      
 }
   
  

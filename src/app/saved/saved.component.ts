@@ -42,12 +42,6 @@ export class SavedComponent implements OnInit {
 
       });
     })
-
-
-
-  
-    
-    
   }
   Index(Isim:string){
     window.localStorage.setItem('myId',Isim)

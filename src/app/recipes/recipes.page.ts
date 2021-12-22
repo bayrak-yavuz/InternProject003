@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.page.html',
@@ -26,6 +27,7 @@ export class RecipesPage implements OnInit {
     private auth: AngularFireAuth,
     private recipeService: RecipesService,
     private loginGuard: LoginGuard,
+    private userService:UserService,
     private afsg: AngularFireAuthGuard) {
   }
 
@@ -61,12 +63,16 @@ export class RecipesPage implements OnInit {
      this.recipe=res.data();
      this.photo=this.recipe.photo;
      this.name=this.recipe.name;
+     this.id=this.recipe.id;
      this.resText=this.recipe.recipes;
      this.items=this.recipe.checkList;
     console.log(this.recipe)
     console.log(this.items)
     });
    
+  }
+  addSaved(){
+    this.userService.addSaved(this.id)
   }
 
 
