@@ -73,6 +73,7 @@ export class RecipesPage implements OnInit {
   }
   addSaved(){
     this.userService.addSaved(this.id)
+    console.log("click çalıştı")
   }
 
 
