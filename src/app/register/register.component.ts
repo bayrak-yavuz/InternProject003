@@ -7,6 +7,7 @@ import { LoadingController, ToastController } from '@ionic/angular';
 import { LoginService } from '../services/login.service';
 import { Location } from '@angular/common';
 import { User } from '../models/user';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,11 @@ export class RegisterComponent implements OnInit {
   password: string;
  confirmpassword:string;
  photoUrl:string;
-  constructor(
+ confirmTerms:boolean;
+
+
+
+ constructor(
     private afs: AngularFirestore,
     private afaut: AngularFireAuth,
     private router: Router,
@@ -28,6 +33,7 @@ export class RegisterComponent implements OnInit {
     private toastr: ToastController,
     private loginService: LoginService,
     private location: Location,
+    private alertCtrl:AlertController,
 
 
   ) { }
@@ -35,9 +41,45 @@ export class RegisterComponent implements OnInit {
     this.location.back();
 
   }
+
+  signTerms() {
+     let alert = this.alertCtrl.create({
+       header:'KİŞİSEL VERİLERİN KORUNMASINA İLİŞKİN AYDINLATMA METİNİ',
+      message: 'Hakkınızda her türlü bilgiyi toplayıp başka adamlara satıyoz veya kendimiz kullanıyoz ',
+      buttons: [
+        {
+          text: 'Hayır',
+          role: 'cancel',
+          handler: () => {
+            this.confirmTerms=false;
+            console.log('Hayıra tıklandı');
+          }
+        },
+        {
+          text: 'Evet',
+          handler: () => {
+            this.confirmTerms=true;
+            console.log('Sözleşmeyi Kabul ettiniz')
+            console.log('https://www.youtube.com/watch?v=I0ld-0OKBLM');
+          }
+        }
+      ]
+    }).then(res => {res.present();});
+  }
+
+  ionViewWillEnter(){
+  this.signTerms()
+  
+}
+
+
   ngOnInit() { }
+
+
+
   async register() {
-    if (this.name && this.email && this.phone && this.password) {
+
+     if (this.name && this.email && this.phone && this.password &&this.confirmTerms ) {
       const loading = await this.loadingCtrl.create({
         message: 'Yükleniyor...',
         spinner: 'crescent',
@@ -67,7 +109,7 @@ export class RegisterComponent implements OnInit {
         
     }
     else {
-      this.toast('Bilgileri tam  giriniz', 'success');
+      this.toast('Bilgileri tam  giriniz ve Aydınlatma metinin kabul ediniz', 'success');
 
     }
   }//end register
