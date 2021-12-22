@@ -16,7 +16,7 @@
     <div class="row res justify-content-end">
       <!-- İçindekiler -->
       <div class="col-11  resTitle " style="text-align: start; margin-bottom: 10px;">İçindekiler</div>
-      <div (click)="addSaved()" class="saved"><i class="far fa-bookmark " ></i></div>
+      <div (click)="addSaved()" class="saved"><i *ngIf="check" class="far fa-bookmark " ></i></div>
 
     </div>
     <div class="checkBox">

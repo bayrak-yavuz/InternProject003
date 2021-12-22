@@ -35,8 +35,8 @@ export class SavedComponent implements OnInit {
      this.data2=res.map(r=>r.recipeId),
  
       this.data2.forEach(recipeId => {
-        this.recipesService.getRecipe(recipeId).subscribe(res=>{
-                      this.data.push(res.data());
+        this.recipesService.getRecipe(recipeId).subscribe(res=>{          
+          this.data.push(res.data());
           console.log(this.data)
          });
 
