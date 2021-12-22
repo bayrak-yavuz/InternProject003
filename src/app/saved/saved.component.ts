@@ -27,17 +27,25 @@ export class SavedComponent implements OnInit {
     this.getSaveds()
     
   }
-  data:any
+
   data2:any
+  data:any
   async getSaveds(){
     this.userService.listSaved(((await this.auth.currentUser).uid)).subscribe((res:any[])=> {
       this.data2=res.map(r=>r.recipeId),
-      console.log(this.data2)
+      this.data2.forEach(i => {
+        this.recipesService.getRecipe(i).subscribe(res=>{
+          this.data=res.data();
+          console.log(this.data)
+         });
+        
+      });
     })
-     this.recipesService.getSavedRecipes(this.data2).subscribe(res=> (
-      this.data= res,
-      console.log(this.data)
-     ))
+
+
+
+  
+    
     
   }
   Index(Isim:string){
