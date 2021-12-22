@@ -38,6 +38,7 @@ export class SavedComponent implements OnInit {
         this.recipesService.getRecipe(recipeId).subscribe(res=>{          
           this.data.push(res.data());
           console.log(this.data)
+
          });
 
       });
