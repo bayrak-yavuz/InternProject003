@@ -37,6 +37,10 @@ export class RecipesService {
     getSavedRecipes(id:String){
       return this.afs.collection("tarifler",ref=>ref.where("userId","array-contains-any",id)).snapshotChanges()
     }
+    getRecipeSave(recipeId:string){
+      return this.afs.collection('tarifler').doc(recipeId).get()
+
+      }
 }
   
  
