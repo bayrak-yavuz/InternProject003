@@ -76,10 +76,10 @@ export class RecipesPage implements OnInit {
     console.log("click çalıştı")
   }
   data2:any
-  check:boolean
+  check:boolean=true
 
   async checkSaved(){
-    this.userService.listSaved((await this.auth.currentUser).uid).subscribe((res:any[])=> {
+    this.userService.listSaved(((await this.auth.currentUser).uid)).subscribe((res:any[])=> {
       this.data2=res.map(r=>r.recipeId),
       this.data2.forEach(recipeId => {
          if(recipeId==this.id){
