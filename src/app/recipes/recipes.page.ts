@@ -53,6 +53,7 @@ export class RecipesPage implements OnInit {
   }
   ngOnInit() {
 
+    this.checkSaved();
 
   }  
   back() {
@@ -75,20 +76,19 @@ export class RecipesPage implements OnInit {
     this.userService.addSaved(this.id)
     console.log("click çalıştı")
   }
+
+
   data2:any
   check:boolean
 
   async checkSaved(){
-    this.userService.listSaved((await this.auth.currentUser).uid).subscribe((res:any[])=> {
-      this.data2=res.map(r=>r.recipeId),
+    this.userService.listSaved(((await this.auth.currentUser).uid)).subscribe((res:any[])=> {
+    this.data2=res.map(r=>r.recipeId),
       this.data2.forEach(recipeId => {
          if(recipeId==this.id){
            this.check=false;
          }
-         else
-         {
-           this.check=true;
-         }
+       
         
       });
   

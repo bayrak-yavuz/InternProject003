@@ -32,7 +32,7 @@ export class RecipesService {
 
     searchRecipe(name:String){
       console.log("search service calıstı " + name +" aranıyor...")
-      return this.afs.collection("tarifler",ref=>ref.where("name","==",name)).snapshotChanges()
+      return this.afs.collection("tarifler",ref=>ref.where("name","==",name)).valueChanges()
     }
     getSavedRecipes(id:String){
       return this.afs.collection("tarifler",ref=>ref.where("userId","array-contains-any",id)).snapshotChanges()

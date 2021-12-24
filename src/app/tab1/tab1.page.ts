@@ -57,7 +57,9 @@ Index(Isim:string){
     
     
     this.recipeService.searchRecipe(name).subscribe(res=> (
-      this.data2= res
+      this.data2= res[0],
+      this.router.navigate(['/recipes', this.data2.id])
+      
      ))
 
 
@@ -67,12 +69,7 @@ Index(Isim:string){
      console.log(this.data2)
      console.log(this.data2.id)
 
-     if (this.data2==undefined){
-       this.toast('Aradığınız Sonuç Bulunamadı','warning');
-     }
-     else{
-     this.router.navigate(['/recipes', this.data2.id]);
-     }
+     
   }
 
   ionViewWillEnter(){
