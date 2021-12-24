@@ -79,12 +79,12 @@ export class RecipesPage implements OnInit {
 
 
   data2:any
-  check:boolean
+  check:boolean=true
 
   async checkSaved(){
     this.userService.listSaved(((await this.auth.currentUser).uid)).subscribe((res:any[])=> {
-    this.data2=res.map(r=>r.recipeId),
-      this.data2.forEach(recipeId => {
+        this.data2=res.map(r=>r.recipeId),
+       this.data2.forEach(recipeId => {
          if(recipeId==this.id){
            this.check=false;
          }
