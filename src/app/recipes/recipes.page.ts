@@ -53,7 +53,7 @@ export class RecipesPage implements OnInit {
   }
   ngOnInit() {
 
-
+    this.checkSaved();
   }  
   back() {
     this.location.back();

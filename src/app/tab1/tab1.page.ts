@@ -50,29 +50,31 @@ Index(Isim:string){
   //   return Isim
   // }     
   // }
-  data2:any;
+  data2:any[];
   search(name: string): void {
     console.log("search çalıştı.")
     
     
     
-    this.recipeService.searchRecipe(name).subscribe(res=> (
-      this.data2= res
-     ))
+    this.recipeService.searchRecipe(name).subscribe(res=> {
+      this.data2= res;
+      if(this.data2.length==0){
+        this.toast('bulunamadı','danger')
+      }
+      else{
+        this.router.navigate(['/recipes', this.data2[0].id]);
+      }
+      
+      
+    })
 
 
 
 
 
      console.log(this.data2)
-     console.log(this.data2.id)
 
-     if (this.data2==undefined){
-       this.toast('Aradığınız Sonuç Bulunamadı','warning');
-     }
-     else{
-     this.router.navigate(['/recipes', this.data2.id]);
-     }
+     
   }
 
   ionViewWillEnter(){
