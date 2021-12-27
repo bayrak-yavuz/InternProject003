@@ -50,24 +50,29 @@ Index(Isim:string){
   //   return Isim
   // }     
   // }
-  data2:any;
+  data2:any[];
   search(name: string): void {
     console.log("search çalıştı.")
     
     
     
-    this.recipeService.searchRecipe(name).subscribe(res=> (
-      this.data2= res[0],
-      this.router.navigate(['/recipes', this.data2.id])
+    this.recipeService.searchRecipe(name).subscribe(res=> {
+      this.data2= res;
+      if(this.data2.length==0){
+        this.toast('bulunamadı','danger')
+      }
+      else{
+        this.router.navigate(['/recipes', this.data2[0].id]);
+      }
       
-     ))
+      
+    })
 
 
 
 
 
      console.log(this.data2)
-     console.log(this.data2.id)
 
      
   }
