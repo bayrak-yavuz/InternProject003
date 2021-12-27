@@ -49,9 +49,9 @@
             <ion-label position="stacked">Şifre Tekrarı</ion-label>
             <ion-input required type="password" [(ngModel)]="confirmpassword"  name="confirmpassword" (ionChange)="checkPassword()"></ion-input>
           </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Şifre Tekrarı</ion-label>
-            <ion-input required type="password" [(ngModel)]="confirmpassword"  name="confirmpassword" (ionChange)="checkPassword()"></ion-input>
+          <ion-item *ngFor="let entry of form">
+            <ion-label>{{entry.val}}</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
           </ion-item>
         </ion-list>
       </form>
