@@ -32,11 +32,16 @@ export class SavedComponent implements OnInit {
   data:any[]=[]
   async getSaveds(){
     this.userService.listSaved(((await this.auth.currentUser).uid)).subscribe((res:any[])=> {
-     this.data2=res.map(r=>r.recipeId),
- 
+     this.data2=res.map(r=>r.recipeId);
+      
       this.data2.forEach(recipeId => {
-        this.recipesService.getRecipe(recipeId).subscribe(res=>{          
-          this.data.push(res.data());
+        this.data=[]
+        this.recipesService.getRecipe(recipeId).subscribe((res:any)=>{ 
+          if(!this.data.filter(d=>d.recipeId==res.id).length)
+          {
+            this.data.push(res.data());
+          }      
+         
           console.log(this.data)
 
          });
