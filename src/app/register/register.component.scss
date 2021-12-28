@@ -2,7 +2,7 @@
 .grid
 {
  display: grid;
- grid-template-rows: 60px 100px 550px;
+ grid-template-rows: 60px 100px 520px;
  margin-top: 15px;
 }
 
@@ -100,5 +100,11 @@ text-decoration: inherit;
   }
   .error_message{
     color:#f9722e
+  }
+  .clickable{
+    pointer-events: initial !important;
+    &:hover{
+     color:#C9313D; 
+    }
   }
  

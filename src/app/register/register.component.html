@@ -49,9 +49,14 @@
             <ion-label position="stacked">Şifre Tekrarı</ion-label>
             <ion-input required type="password" [(ngModel)]="confirmpassword"  name="confirmpassword" (ionChange)="checkPassword()"></ion-input>
           </ion-item>
+          <ion-item >
+            <ion-label position="stacked"   >Kişisel verilerin korunumu kanunu</ion-label>
+          </ion-item>
           <ion-item>
-            <ion-label position="stacked">Kişisel verilerin korunumu kanunu</ion-label>
-            <ion-checkbox (ionChange)="signTerms()" checked="{{confirmTerms}}" ></ion-checkbox>
+            <ion-label position="stacked" (click)=signTerms() class="clickable"> Anlaşmayı görmek için tıklayınız.</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-checkbox slot="start" color="dark" [(ngModel)]="isChecked" [ngModelOptions]="{standalone: true}" ></ion-checkbox>
           </ion-item>
         </ion-list>
       </form>
