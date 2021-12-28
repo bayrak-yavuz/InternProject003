@@ -37,7 +37,7 @@ export class SavedComponent implements OnInit {
       this.data2.forEach(recipeId => {
         this.data=[]
         this.recipesService.getRecipe(recipeId).subscribe((res:any)=>{ 
-          if(!this.data.filter(d=>d.recipeId==res.id).length)
+          if(!this.data.filter(d=>d.id==res.id).length)
           {
             this.data.push(res.data());
           }      
