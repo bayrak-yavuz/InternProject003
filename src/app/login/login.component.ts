@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+    
 
   }
   ngOnInit(): void {
